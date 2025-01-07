@@ -17,12 +17,26 @@
                 </button>
                 <button mat-raised-button class="nav-item" routerLink="book-create" routerLinkActive="active-link">
                     <mat-icon>create_new_folder</mat-icon>
-                    <h3>Book Form Create</h3> 
+                    <h3>Book Form</h3> 
                 </button>
             </nav>
         </div>
     </div>
     <div class="left-side">
-        <router-outlet></router-outlet>
+        <div class="box-content">
+            <div class="nav-bar">   
+                <div class="right"> 
+                    <button class="btn">
+                        <mat-icon class="nav-icon">reorder</mat-icon>
+                    </button>
+                </div>
+                <div class="left">
+                    <button class="btn">
+                        <mat-icon class="nav-icon">info</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>

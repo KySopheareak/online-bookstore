@@ -1,0 +1,9 @@
+export enum RESPONSE_STATUS {
+    SUCCESS = 1,
+    ERROR_CLIENT = 0,
+    ERROR_SERVER = -1,
+    UNKNOWN = 2,
+    
+    NOT_FOUND = 401,
+    INTERNAL_SERVER_ERROR = 500
+}
