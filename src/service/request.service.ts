@@ -93,7 +93,6 @@ export class RequestService {
 
     getJSON<T = CommonResponse<any>>(path: string, request?: RequestParam): Observable<CommonResponse<T>> {
         const url = environment.api_url + path;
-        console.log('GETJSON: ', url)
         this.clean(request?.data);
         if (request?.option?.is_loading) {
             this.loadingService.setLoading(true);

@@ -15,7 +15,7 @@ export class ApiService {
   constructor(private requestService: RequestService) { }
 
     public getBooklist(): Observable<CommonResponse<any>>{
-      return this.requestService.getJSON<CommonResponse<any>>(Endpoint.booklist,{
+      return this.requestService.get<CommonResponse<any>>(Endpoint.booklist,{
         option: {
           is_loading: true
         }

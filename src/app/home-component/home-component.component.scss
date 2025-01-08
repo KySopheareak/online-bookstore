@@ -99,8 +99,8 @@
 	}
 
 	.left-side {
-		// flex: 1;
-        width: 80%;
+		flex: 1;
+        width: 100%;
 		background: #D6E0E2;
 		padding: 20px;
 		display: flex;
@@ -124,16 +124,17 @@
 				position: absolute;
 				top: 0;
 				left: 0;
-				width: 100%;
+				width: 97.3%;
 				min-height: 30px;
 				padding: 10px 20px;
 				box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px;
 				gap: 1180px;
+
 				.right {
 					margin-left: 0px;
 				}
 				.left {
-					margin-right: 80px;
+					margin-right: 0px;
 				}
 			}
 		}
