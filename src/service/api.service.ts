@@ -14,8 +14,9 @@ enum Endpoint {
 export class ApiService {
   constructor(private requestService: RequestService) { }
 
-    public getBooklist(): Observable<CommonResponse<any>>{
-      return this.requestService.get<CommonResponse<any>>(Endpoint.booklist,{
+    public getBooklist(data: any): Observable<CommonResponse<any>>{
+      return this.requestService.postJSON<CommonResponse<any>>(Endpoint.booklist,{
+        data,
         option: {
           is_loading: true
         }

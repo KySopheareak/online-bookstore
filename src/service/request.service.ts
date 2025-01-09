@@ -354,7 +354,6 @@ export class RequestService {
 
     private handleResponse<T>(res: any, option?: RequestOption) {
         const r = res as unknown as BaseResponse;
-
         if (r.status === RESPONSE_STATUS.NOT_FOUND) {
             // this.localStorageService.delete(LocalStorageEnum.token);
             // this.router.navigate(['/login']);
@@ -367,69 +366,69 @@ export class RequestService {
         else if (r.status === RESPONSE_STATUS.UNKNOWN) {
             return res;
         }
-        else if (r.status === RESPONSE_STATUS.ERROR_CLIENT) {
-            if (r.error_code && option?.is_snack_bar == undefined) {
-                if (["1006", "1003", "1012"].includes(r.error_code)) {
-                    return r;
-                }
-                this.snackBar.openFromComponent(SnackbarComponentComponent, {
-                    duration: 1800,
-                    panelClass: 'panel-error',
-                    data: {
-                        message: 'error_code.' + r.error_code
-                    }
-                });
-                return res;
+        // else if (r.status === RESPONSE_STATUS.ERROR_CLIENT) {
+        //     if (r.error_code && option?.is_snack_bar == undefined) {
+        //         if (["1006", "1003", "1012"].includes(r.error_code)) {
+        //             return r;
+        //         }
+        //         this.snackBar.openFromComponent(SnackbarComponentComponent, {
+        //             duration: 1800,
+        //             panelClass: 'panel-error',
+        //             data: {
+        //                 message: 'error_code.' + r.error_code
+        //             }
+        //         });
+        //         return res;
 
-            } else if (r.error_code && option?.is_snack_bar != undefined) {
-                if (option.is_snack_bar) {
-                    this.snackBar.openFromComponent(SnackbarComponentComponent, {
-                        duration: 4000,
-                        panelClass: 'panel-error',
-                        data: {
-                            message: "error_code." + r.error_code || r.error_code[0]
-                        },
-                    });
-                }
+        //     } else if (r.error_code && option?.is_snack_bar != undefined) {
+        //         if (option.is_snack_bar) {
+        //             this.snackBar.openFromComponent(SnackbarComponentComponent, {
+        //                 duration: 4000,
+        //                 panelClass: 'panel-error',
+        //                 data: {
+        //                     message: "error_code." + r.error_code || r.error_code[0]
+        //                 },
+        //             });
+        //         }
 
-            } else if (!r.error_code && option?.is_snack_bar != undefined) {
-                if (option.is_snack_bar) {
-                    let splitter = (str: string, split_by: string) => { return str.split(split_by) };
-                    let errors = Object.values(r.errors as object).map(item => {
-                        return {
-                            msg: item[0].message || item[0],
-                            code: item[0]?.code
-                        }
-                    })
+        //     } else if (!r.error_code && option?.is_snack_bar != undefined) {
+        //         if (option.is_snack_bar) {
+        //             let splitter = (str: string, split_by: string) => { return str.split(split_by) };
+        //             let errors = Object.values(r.errors as object).map(item => {
+        //                 return {
+        //                     msg: item[0].message || item[0],
+        //                     code: item[0]?.code
+        //                 }
+        //             })
 
-                    // let localize_msg = errors[0].code ? "code." + errors[0].code :
-                    //     errors[0].msg.includes('is required') ? this.tr.instant('response_message.required', {value: this.tr.instant(`response_message.${splitter(errors[0].msg, ' ')[0].toLowerCase()}`)}) :
-                    //     errors[0].msg;
+        //             // let localize_msg = errors[0].code ? "code." + errors[0].code :
+        //             //     errors[0].msg.includes('is required') ? this.tr.instant('response_message.required', {value: this.tr.instant(`response_message.${splitter(errors[0].msg, ' ')[0].toLowerCase()}`)}) :
+        //             //     errors[0].msg;
 
-                    let general_message = errors[0].code ? "code." + errors[0].code : errors[0].msg;
-                    this.snackBar.openFromComponent(SnackbarComponentComponent, {
-                        duration: 4000,
-                        panelClass: 'panel-error',
-                        data: {
-                            // message: option.is_localize_msg ? localize_msg : general_message
-                        },
-                    });
-                }
+        //             let general_message = errors[0].code ? "code." + errors[0].code : errors[0].msg;
+        //             this.snackBar.openFromComponent(SnackbarComponentComponent, {
+        //                 duration: 4000,
+        //                 panelClass: 'panel-error',
+        //                 data: {
+        //                     // message: option.is_localize_msg ? localize_msg : general_message
+        //                 },
+        //             });
+        //         }
 
-            }
+        //     }
 
-            throwError(() => ({ message: r.message, errors: r.errors }));
-            return res;
-        }
-        else if (r.status === RESPONSE_STATUS.INTERNAL_SERVER_ERROR && option?.is_login) {
-            this.snackBar.open('ឈ្មោះចូលប្រព័ន្ធ ឬ ពាក្យសម្ងាត់មិនត្រឹមត្រូវ', '', { duration: 3000, horizontalPosition: 'center', panelClass: 'panel-error' });
-        }
-        else {
-            if (option?.is_alert_error) {
-                this.snackBar.open("ប្រព័ន្ធមានបញ្ហា", '', { duration: 3000, horizontalPosition: 'center', panelClass: 'panel-error' });
-            }
-            throwError(() => ({ message: res.message }));
-        }
+        //     throwError(() => ({ message: r.message, errors: r.errors }));
+        //     return res;
+        // }
+        // else if (r.status === RESPONSE_STATUS.INTERNAL_SERVER_ERROR && option?.is_login) {
+        //     this.snackBar.open('ឈ្មោះចូលប្រព័ន្ធ ឬ ពាក្យសម្ងាត់មិនត្រឹមត្រូវ', '', { duration: 3000, horizontalPosition: 'center', panelClass: 'panel-error' });
+        // }
+        // else {
+        //     if (option?.is_alert_error) {
+        //         this.snackBar.open("ប្រព័ន្ធមានបញ្ហា", '', { duration: 3000, horizontalPosition: 'center', panelClass: 'panel-error' });
+        //     }
+        //     throwError(() => ({ message: res.message }));
+        // }
     }
 
     private handleHttpError(error: HttpErrorResponse, option?: RequestOption) {

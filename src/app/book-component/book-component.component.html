@@ -1,22 +1,63 @@
 <div class="container">
-    <div class="title">
-        <h3>Book List</h3>
-    </div>
     <div class="filter-section">
-        <form class="search-form">
-            <mat-form-field class="search-bar">
-              <mat-label>Generation or Title</mat-label>
-              <input matInput>
-            </mat-form-field>
-        </form>
-        <div class="btn-container">
-            <button mat-raised-button>reset
-                <mat-icon class="btn-icon">restart_alt</mat-icon>
-            </button>
-            <button mat-raised-button>search
-                <mat-icon class="btn-icon">search</mat-icon>
-            </button>
+        <div class="title">
+            <h3>Book List</h3>
+        </div>
+        <div class="filter">
+            <form [formGroup]="form" class="search-form">
+                <div class="search-bar">
+                  <input class="input-custom" formControlName="search" placeholder="Title......" (keyup.enter)="onSearch()">
+                </div>
+            </form>
+            <div class="btn-container">
+                <button mat-raised-button (click)="onReset()">reset
+                    <mat-icon class="btn-icon">restart_alt</mat-icon>
+                </button>
+                <button mat-raised-button (click)="onSearch()">search
+                    <mat-icon class="btn-icon">search</mat-icon>
+                </button>
+            </div>
         </div>
     </div>
-    {{ data?.data | json}}
+    <div class="box-contain">
+        <div class="table-contain">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element">
+                        {{element.id}} 
+                    </td>
+                </ng-container>
+            
+                <!-- TITLE Column -->
+                <ng-container matColumnDef="title">
+                  <th mat-header-cell *matHeaderCellDef> TITLE </th>
+                    <td mat-cell *matCellDef="let element">
+                        {{element.title}} 
+                    </td>
+                </ng-container>
+            
+                <!-- GENERATION Column -->
+                <ng-container matColumnDef="generation">
+                  <th mat-header-cell *matHeaderCellDef> GENERATION </th>
+                    <td mat-cell *matCellDef="let element">
+                        {{element.generation}} 
+                    </td>
+                </ng-container>
+            
+                <!-- RATING Column -->
+                <ng-container matColumnDef="rating">
+                  <th mat-header-cell *matHeaderCellDef> RATING </th>
+                    <td mat-cell *matCellDef="let element">
+                        {{element.rating}} 
+                    </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>  
+    </div>
 </div>
