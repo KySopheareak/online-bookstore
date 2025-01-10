@@ -24,6 +24,7 @@ import { SmoothScrollbarComponent } from '../share/smooth-scrollbar/smooth-scrol
 import { UserImageComponent } from '../share/user-image/user-image.component';
 import { NavMenuComponent } from '../nav-menu/nav-menu.component';
 import { EmpFullNamePipe } from "../share/pipe/emp-full-name.pipe";
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-home-component',
@@ -42,10 +43,12 @@ import { EmpFullNamePipe } from "../share/pipe/emp-full-name.pipe";
     UserImageComponent,
     NavMenuComponent,
     TranslateModule,
-    EmpFullNamePipe
+    EmpFullNamePipe,
+    MatButtonModule,
+    MatIconModule
 ],
   templateUrl: './home-component.component.html',
-  styleUrl: './home-component.component.scss'
+  styleUrl: './home-component.component.scss',
 })
 export class HomeComponentComponent {
   isTablet!: boolean;

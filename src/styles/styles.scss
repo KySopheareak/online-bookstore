@@ -1,13 +1,15 @@
 @use "@angular/material" as mat;
-@import "@angular/cdk/overlay-prebuilt.css";
+@import '@angular/cdk/overlay-prebuilt.css';
+
 
 @import "./custom-material";
 @import "./table";
 @import "./button";
 @import "./variables";
-@import "./bootstrap-custom";
+
+// @import "./bootstrap-custom";
 @import "./custom-ngx-intl-input";
-@import "progress-tracker/src/styles/progress-tracker.scss";
+// @import "progress-tracker/src/styles/progress-tracker.scss";
 @import "./custom-progress-tracker";
 @import "./custom-margin";
 @import "./custom-mat-chip";

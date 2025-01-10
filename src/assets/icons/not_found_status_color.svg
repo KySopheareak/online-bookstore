@@ -1,0 +1,8 @@
+<svg id="_39._Remove_Box" data-name="39. Remove Box" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+	<path id="Path_1070" data-name="Path 1070" d="M10,1h2.813V3.4a.408.408,0,0,1-.408.408h-2A.408.408,0,0,1,10,3.4Z" transform="translate(-5.313 -0.531)" fill="#ff3c3c"/>
+	<path id="Path_1071" data-name="Path 1071" d="M5.156,12.188H1.406A1.406,1.406,0,0,1,0,10.781V1.406A1.406,1.406,0,0,1,1.406,0h9.375a1.406,1.406,0,0,1,1.406,1.406v3.75a.469.469,0,0,1-.937,0V1.406a.469.469,0,0,0-.469-.469H1.406a.469.469,0,0,0-.469.469v9.375a.469.469,0,0,0,.469.469h3.75a.469.469,0,0,1,0,.938Z" transform="translate(0 0)" fill="#ff3c3c"/>
+	<path id="Path_1072" data-name="Path 1072" d="M5.406,20.938H4.469a.469.469,0,0,1,0-.937h.938a.469.469,0,0,1,0,.938Z" transform="translate(-2.125 -10.625)" fill="#ff3c3c"/>
+	<path id="Path_1073" data-name="Path 1073" d="M18.219,22.438a4.219,4.219,0,1,1,4.219-4.219A4.219,4.219,0,0,1,18.219,22.438Zm0-7.5A3.281,3.281,0,1,0,21.5,18.219,3.281,3.281,0,0,0,18.219,14.938Z" transform="translate(-7.438 -7.438)" fill="#ff3c3c"/>
+	<circle id="Ellipse_38" data-name="Ellipse 38" cx="2.344" cy="2.344" r="2.344" transform="translate(8.438 8.438)" fill="rgba(255,60,60,0.1)"/>
+	<path id="Path_1074" data-name="Path 1074" d="M22.344,22.938H20.469a.469.469,0,0,1,0-.937h1.875a.469.469,0,0,1,0,.938Z" transform="translate(-10.625 -11.688)" fill="#ff3c3c"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg id="_39._Remove_Box" data-name="39. Remove Box" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+	<path id="Path_1070" data-name="Path 1070" d="M10,1h3.75V4.206a.544.544,0,0,1-.544.544H10.544A.544.544,0,0,1,10,4.206Z" transform="translate(-3.75 -0.375)" fill="#a3a3a3"/>
+	<path id="Path_1071" data-name="Path 1071" d="M6.875,16.25h-5A1.875,1.875,0,0,1,0,14.375V1.875A1.875,1.875,0,0,1,1.875,0h12.5A1.875,1.875,0,0,1,16.25,1.875v5a.625.625,0,0,1-1.25,0v-5a.625.625,0,0,0-.625-.625H1.875a.625.625,0,0,0-.625.625v12.5A.625.625,0,0,0,1.875,15h5a.625.625,0,0,1,0,1.25Z" fill="#a3a3a3"/>
+	<path id="Path_1072" data-name="Path 1072" d="M5.875,21.25H4.625a.625.625,0,0,1,0-1.25h1.25a.625.625,0,0,1,0,1.25Z" transform="translate(-1.5 -7.5)" fill="#a3a3a3"/>
+	<path id="Path_1073" data-name="Path 1073" d="M19.625,25.25a5.625,5.625,0,1,1,5.625-5.625A5.625,5.625,0,0,1,19.625,25.25Zm0-10A4.375,4.375,0,1,0,24,19.625,4.375,4.375,0,0,0,19.625,15.25Z" transform="translate(-5.25 -5.25)" fill="#a3a3a3"/>
+	<circle id="Ellipse_38" data-name="Ellipse 38" cx="3.125" cy="3.125" r="3.125" transform="translate(11.25 11.25)" fill="#a3a3a3"/>
+	<path id="Path_1074" data-name="Path 1074" d="M23.125,23.25h-2.5a.625.625,0,0,1,0-1.25h2.5a.625.625,0,0,1,0,1.25Z" transform="translate(-7.5 -8.25)" fill="#fff"/>
+</svg>
