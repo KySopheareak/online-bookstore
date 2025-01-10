@@ -1,0 +1,436 @@
+.svg-icon {
+    height: 80px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 24px;
+    margin-top: 24px;
+
+    &.reduce-size {
+      height: 55px;
+    }
+}
+
+.custom-dialog-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // &.mat-mdc-dialog-title {
+  //   padding: 0px 24px 9px !important;
+  // }
+}
+
+.custom-dialog-content {
+  margin-bottom: 8px;
+
+  p.desc {
+      margin: 0px;
+      line-height: 30px;
+      font-size: 14px !important;
+      text-align: center !important;
+  }
+    .error {
+        color: #3e6170;
+        margin-left: 121px;
+        line-height: 25px;
+        font-size: 14px !important;
+        text-align: left !important;
+      }
+}
+
+
+/***************************************************
+* ANIMATE ICON SUCCESS
+**************************************************/
+
+@-webkit-keyframes animate-icon-success-1 {
+    0% {
+        stroke-dashoffset: 1208.4736328125px;
+        stroke-dasharray: 1208.4736328125px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 1208.4736328125px;
+    }
+}
+
+@keyframes animate-icon-success-1 {
+    0% {
+        stroke-dashoffset: 1208.4736328125px;
+        stroke-dasharray: 1208.4736328125px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 1208.4736328125px;
+    }
+}
+
+.svg-success-1 {
+    -webkit-animation: animate-icon-success-1 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.15s both;
+    animation: animate-icon-success-1 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.15s both;
+}
+
+@-webkit-keyframes animate-icon-success-2 {
+    0% {
+        stroke-dashoffset: 297.06097412109375px;
+        stroke-dasharray: 297.06097412109375px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 297.06097412109375px;
+    }
+}
+
+@keyframes animate-icon-success-2 {
+    0% {
+        stroke-dashoffset: 297.06097412109375px;
+        stroke-dasharray: 297.06097412109375px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 297.06097412109375px;
+    }
+}
+
+.svg-success-2 {
+    -webkit-animation: animate-icon-success-2 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.62s both;
+    animation: animate-icon-success-2 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.62s both;
+}
+
+/***************************************************
+* ANIMATE ICON WARNING
+**************************************************/
+
+@-webkit-keyframes animate-icon-warn-1 {
+    0% {
+        stroke-dashoffset: 95.66000366210938px;
+        stroke-dasharray: 95.66000366210938px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 95.66000366210938px;
+    }
+}
+
+@keyframes animate-icon-warn-1 {
+    0% {
+        stroke-dashoffset: 95.66000366210938px;
+        stroke-dasharray: 95.66000366210938px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 95.66000366210938px;
+    }
+}
+
+.svg-warning-1 {
+    -webkit-animation: animate-icon-warn-1 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s both;
+    animation: animate-icon-warn-1 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s both;
+}
+
+@-webkit-keyframes animate-icon-warn-2 {
+    0% {
+        stroke-dashoffset: 2.232207551598549px;
+        stroke-dasharray: 2.232207551598549px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 2.232207551598549px;
+    }
+}
+
+@keyframes animate-icon-warn-2 {
+    0% {
+        stroke-dashoffset: 2.232207551598549px;
+        stroke-dasharray: 2.232207551598549px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 2.232207551598549px;
+    }
+}
+
+.svg-warning-2 {
+    -webkit-animation: animate-icon-warn-2 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s both;
+    animation: animate-icon-warn-2 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s both;
+}
+
+@-webkit-keyframes animate-icon-warn-3 {
+    0% {
+        stroke-dashoffset: 1208.540283203125px;
+        stroke-dasharray: 1208.540283203125px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 1208.540283203125px;
+    }
+}
+
+@keyframes animate-icon-warn-3 {
+    0% {
+        stroke-dashoffset: 1208.540283203125px;
+        stroke-dasharray: 1208.540283203125px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 1208.540283203125px;
+    }
+}
+
+.svg-warning-3 {
+    -webkit-animation: animate-icon-warn-3 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s both;
+    animation: animate-icon-warn-3 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s both;
+}
+
+/***************************************************
+* ANIMATE ICON INFO
+**************************************************/
+
+@-webkit-keyframes animate-info-stroke-1 {
+    0% {
+        stroke-dashoffset: 1208.540283203125px;
+        stroke-dasharray: 1208.540283203125px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 1208.540283203125px;
+    }
+}
+
+@keyframes animate-info-stroke-1 {
+    0% {
+        stroke-dashoffset: 1208.540283203125px;
+        stroke-dasharray: 1208.540283203125px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 1208.540283203125px;
+    }
+}
+
+.svg-info-1 {
+    -webkit-animation: animate-info-stroke-1 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s both,
+                animate-info-fill-1 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s both;
+    animation: animate-info-stroke-1 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s both,
+                animate-info-fill-1 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s both;
+}
+
+@-webkit-keyframes animate-info-stroke-2 {
+    0% {
+        stroke-dashoffset: 574.1433715820312px;
+        stroke-dasharray: 574.1433715820312px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 574.1433715820312px;
+    }
+}
+
+@keyframes animate-info-stroke-2 {
+    0% {
+        stroke-dashoffset: 574.1433715820312px;
+        stroke-dasharray: 574.1433715820312px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 574.1433715820312px;
+    }
+}
+
+@-webkit-keyframes animate-info-fill-2 {
+    0% {
+        fill: transparent;
+    }
+
+    100% {
+        fill: rgb(135, 173, 189);
+    }
+}
+
+@keyframes animate-info-fill-2 {
+    0% {
+        fill: transparent;
+    }
+
+    100% {
+        fill: rgb(135, 173, 189);
+    }
+}
+
+.svg-info-2 {
+    -webkit-animation: animate-info-stroke-2 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s both,
+                animate-svg-info-2 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s both;
+    animation: animate-info-stroke-2 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s both,
+                animate-info-fill-2 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s both;
+}
+
+/***************************************************
+* ANIMATE ICON ERROR
+**************************************************/
+
+@-webkit-keyframes animate-svg-stroke-1 {
+    0% {
+        stroke-dashoffset: 210.53199768066406px;
+        stroke-dasharray: 210.53199768066406px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 210.53199768066406px;
+    }
+}
+
+@keyframes animate-svg-stroke-1 {
+    0% {
+        stroke-dashoffset: 210.53199768066406px;
+        stroke-dasharray: 210.53199768066406px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 210.53199768066406px;
+    }
+}
+
+.svg-error-1 {
+    -webkit-animation: animate-svg-stroke-1 .7s cubic-bezier(0.165, 0.84, 0.44, 1) 0.4s both;
+    animation: animate-svg-stroke-1 .7s cubic-bezier(0.165, 0.84, 0.44, 1) 0.4s both;
+}
+
+@-webkit-keyframes animate-svg-stroke-2 {
+    0% {
+        stroke-dashoffset: 208.10899353027344px;
+        stroke-dasharray: 208.10899353027344px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 208.10899353027344px;
+    }
+}
+
+@keyframes animate-svg-stroke-2 {
+    0% {
+        stroke-dashoffset: 208.10899353027344px;
+        stroke-dasharray: 208.10899353027344px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 208.10899353027344px;
+    }
+}
+
+.svg-error-2 {
+    -webkit-animation: animate-svg-stroke-2 .7s cubic-bezier(0.165, 0.84, 0.44, 1) 0.12s both;
+    animation: animate-svg-stroke-2 .7s cubic-bezier(0.165, 0.84, 0.44, 1) 0.12s both;
+}
+
+@-webkit-keyframes animate-svg-stroke-3 {
+    0% {
+        stroke-dashoffset: 1208.540283203125px;
+        stroke-dasharray: 1208.540283203125px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 1208.540283203125px;
+    }
+}
+
+@keyframes animate-svg-stroke-3 {
+    0% {
+        stroke-dashoffset: 1208.540283203125px;
+        stroke-dasharray: 1208.540283203125px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 1208.540283203125px;
+    }
+}
+
+.svg-error-3 {
+    -webkit-animation: animate-svg-stroke-3 .7s cubic-bezier(0.165, 0.84, 0.44, 1) 0.12s both;
+    animation: animate-svg-stroke-3 .7s cubic-bezier(0.165, 0.84, 0.44, 1) 0.12s both;
+}
+
+@keyframes animate-question-stroke-1 {
+	0% {
+		stroke-dashoffset: 52.272560119628906px;
+		stroke-dasharray: 52.272560119628906px;
+	}
+
+	100% {
+		stroke-dashoffset: 0;
+		stroke-dasharray: 52.272560119628906px;
+	}
+}
+
+.svg-question-1 {
+	animation: animate-question-stroke-1 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
+		animate-question-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+}
+
+@keyframes animate-question-stroke-2 {
+	0% {
+		stroke-dashoffset: 13.627599716186523px;
+		stroke-dasharray: 13.627599716186523px;
+	}
+
+	100% {
+		stroke-dashoffset: 0;
+		stroke-dasharray: 13.627599716186523px;
+	}
+}
+
+.svg-question-2 {
+	animation: animate-question-stroke-2 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both,
+		animate-question-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+}
+
+@keyframes animate-question-stroke-3 {
+	0% {
+		stroke-dashoffset: 8.284070014953613px;
+		stroke-dasharray: 8.284070014953613px;
+	}
+
+	100% {
+		stroke-dashoffset: 0;
+		stroke-dasharray: 8.284070014953613px;
+	}
+}
+
+@keyframes animate-question-fill-3 {
+	0% {
+		fill: transparent;
+	}
+
+	100% {
+		fill: rgba(70, 61, 151, 0.8);
+	}
+}
+
+.svg-question-3 {
+	animation: animate-question-stroke-3 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both,
+		animate-question-fill-3 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.45s both;
+}
+
+.form-control {
+    height: auto;
+}

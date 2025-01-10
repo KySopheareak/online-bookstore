@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="right-side">
         <div class="box-content">
             <div class="header">
@@ -39,4 +39,101 @@
             <router-outlet></router-outlet>
         </div>
     </div>
-</div>
+</div> -->
+
+<div id="navigation">
+    <div (click)="onCloseMenu()" role="button" class="menu-close"
+      [ngClass]="{ open: !isMenuIcon && (isHandset || isTablet) }"></div>
+    <div id="menu" [ngClass]="{'close-menu': isMenuIcon, handset: isHandset || isTablet, 'open-menu': !isMenuIcon}">
+      <div [ngClass]="{ shadow: isScrolled }" class="brand-wrapper d-flex flex-column align-items-center justify-content-center">
+        <div class="logo" [class.small-logo]="isMenuIcon"></div>
+        <h1 [ngClass]="{'close-menu': isMenuIcon }">{{ "title" | translate }}</h1>
+      </div>
+  
+      <div class="main-menu">
+        <mat-divider></mat-divider>
+      </div>
+  
+      <app-nav-menu (scrollbar)="onMenuScroll($event)" (menuClick)="onClickMenu()" [isHandset]="isHandset"
+        [isTablet]="isTablet" [menu]="displayMenuItems" [isMenuIcon]="isMenuIcon">
+      </app-nav-menu>
+  
+      <div class="main-menu">
+        <mat-divider></mat-divider>
+      </div>
+  
+      <div class="footer-menu">
+        <mat-nav-list class="menu main-menu">
+          <a [matTooltip]="isMenuIcon ? ('about' | translate) : null" routerLinkActive="active" mat-list-item
+            routerLink="/about-us">
+            <mat-icon [class.menu-icon]="!isMenuIcon">info</mat-icon>
+            <span class="menu-title" *ngIf="!isMenuIcon">{{ "about" | translate }}</span>
+          </a>
+        </mat-nav-list>
+      </div>
+    </div>
+    <div class="sidenav-content" [ngStyle]="{width: isMenuIcon ? 'calc(100vw - 80px)' : 'calc(100vw - 350px)'}">
+      <mat-toolbar class="app-toolbar">
+        <div class="d-flex">
+          <button type="button" aria-label="Toggle sidenav" class="toggle-sidenav" mat-icon-button
+            (click)="onToggleMenu()">
+            <mat-icon svgIcon="menu" aria-label="Side nav toggle icon"></mat-icon>
+          </button>
+  
+          <p class="sub-header mb-0 pl-1">
+            <ng-container *ngIf="title;">
+              <ng-container *ngIf="title.code">
+                ({{ title.code }})
+              </ng-container>
+              <ng-container *ngIf="lang == LANG.KM; else titleENTemplate">
+                {{ title.titleKM }}
+              </ng-container>
+              <ng-template #titleENTemplate>
+                {{ title.titleEN }}
+              </ng-template>
+            </ng-container>
+          </p>
+        </div>
+        <div class="more-option">
+          <div class="user-card d-flex align-items-center">
+            <app-user-image class="avatar-wrapper" [avatarId]="user.avatar"></app-user-image>
+            <span class="username">
+              <ng-container>
+                {{ user | empFullName : util.currentLang }}
+              </ng-container>
+            </span>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="langMenu">
+                <img class="mat-icon flag" [src]="'/assets/icons/' + util.currentLang + '.webp'" />
+                <span>{{ "lang." + util.currentLang | translate }}</span>
+              </button>
+              <button mat-menu-item (click)="onLogout()">
+                <mat-icon>logout</mat-icon>
+                <span>{{ "logout" | translate }}</span>
+              </button>
+            </mat-menu>
+            <mat-menu #langMenu="matMenu">
+              <button (click)="util.setDefaultLang(lang)" mat-menu-item *ngFor="let lang of util.availableLangs">
+                <img class="mat-icon flag" [src]="'/assets/icons/' + lang + '.webp'" [alt]="'flag ' + lang" />
+                {{ "lang." + lang | translate }}
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </mat-toolbar>
+  
+      <app-smooth-scrollbar id="main" (smoothScroll)="onScroll($event)" (scrollLoaded)="onScrollLoaded($event)">
+        <router-outlet></router-outlet>
+      </app-smooth-scrollbar>
+  
+      <div class="action-btn" *ngIf="showActionButton && isContentScrolled" @fade>
+        <button class="m-icon-button-primary move-top" mat-icon-button (click)="moveTop()">
+          <mat-icon>north</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  

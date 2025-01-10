@@ -1,0 +1,65 @@
+// @import "./variables";
+@import "./updated/m_variable.scss";
+
+table.tbl-data {
+  width: unset !important;
+  min-width: unset !important;
+
+  @media (max-width: $phone) {
+    width: 100% !important;
+  }
+
+  tr {
+    td {
+      min-height: 36px;
+      padding: 5px 0px;
+      vertical-align: top;
+    }
+
+		.empty-cell {
+			height: 37px;
+		}
+    td.label {
+      color: black !important;
+      width: max-content;
+      font-size: 14px;
+      padding-right: 30px;
+      line-height: 27px;
+      min-width: 130px;
+
+      @media (max-width: $phone) {
+        padding-right: 10px;
+      }
+    }
+
+    td.value {
+      color: $header-color !important;
+      width: max-content;
+      font-size: 14px;
+      font-family: "SegoeUI", "KhmerOSBattambang" !important;
+      line-height: 27px;
+
+      @media (max-width: $phone) {
+        text-align: end;
+      }
+    }
+  }
+
+  tr.tr-empty {
+    td {
+      height: 38px;
+    }
+
+    @media (max-width: $phone) {
+      display: none !important;
+    }
+  }
+}
+
+table.tracking-msg {
+  margin-left: 21px;
+
+  @media (max-width: $phone) {
+    margin: 0px;
+  }
+}

@@ -1,0 +1,97 @@
+@import "./m_variable.scss";
+
+/************************************/
+/* MUST APPLY ON html 'p' element */
+/************************************/
+
+@font-face {
+  font-family: "KhmerOSBattambang";
+  src: url("../../assets/fonts/KhmerOSBattambang.ttf");
+}
+
+@font-face {
+  font-family: "SegoeUI";
+  src: url("../../assets/fonts/SegoeUI.ttf");
+}
+
+.title {
+  color: $header-color !important;
+  font-family: "SegoeUI", "KhmerOSBattambang" !important;
+  font-weight: bold !important;
+  // margin-bottom: 20px !important;
+
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  gap: 8px;
+
+  --local-size: 16px;
+  font-size: var(--local-size) !important;
+
+  mat-icon {
+    font-size: calc(var(--local-size) + 4px);
+    width: calc(var(--local-size) + 4px);
+    height: calc(var(--local-size) + 4px);
+  }
+}
+
+.title-sm {
+  @extend .title;
+  --local-size: 12px;
+  font-size: var(--local-size) !important;
+
+  mat-icon {
+    font-size: calc(var(--local-size) + 4px) !important;
+    width: calc(var(--local-size) + 4px) !important;
+    height: calc(var(--local-size) + 4px) !important;
+  }
+}
+
+.title-md {
+  @extend .title;
+  --local-size: 14px;
+  font-size: var(--local-size) !important;
+
+  mat-icon {
+    font-size: calc(var(--local-size) + 4px) !important;
+    width: calc(var(--local-size) + 4px) !important;
+    height: calc(var(--local-size) + 4px) !important;
+  }
+}
+
+.title-lg {
+  @extend .title;
+  --local-size: 16px;
+  font-size: var(--local-size) !important;
+
+  mat-icon {
+    font-size: calc(var(--local-size) + 4px) !important;
+    width: calc(var(--local-size) + 4px) !important;
+    height: calc(var(--local-size) + 4px) !important;
+  }
+}
+
+.sub-title {
+  @extend .title;
+  --local-size: 15px;
+  font-size: var(--local-size) !important;
+
+  mat-icon {
+    font-size: calc(var(--local-size) + 4px) !important;
+    width: calc(var(--local-size) + 4px) !important;
+    height: calc(var(--local-size) + 4px) !important;
+  }
+}
+
+.title-20 {
+  @extend .title;
+  --local-size: 20px;
+  font-size: var(--local-size) !important;
+
+  mat-icon {
+    font-size: calc(var(--local-size) + 4px) !important;
+    width: calc(var(--local-size) + 4px) !important;
+    height: calc(var(--local-size) + 4px) !important;
+  }
+}

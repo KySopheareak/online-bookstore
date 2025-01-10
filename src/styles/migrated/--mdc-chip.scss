@@ -1,0 +1,136 @@
+// .mat-mdc-standard-chip {
+//   --mdc-chip-container-shape-family: rounded;
+//   --mdc-chip-container-shape-radius: 16px 16px 16px 16px;
+//   --mdc-chip-with-avatar-avatar-shape-family: rounded;
+//   --mdc-chip-with-avatar-avatar-shape-radius: 14px 14px 14px 14px;
+//   --mdc-chip-with-avatar-avatar-size: 28px;
+//   --mdc-chip-with-icon-icon-size: 18px;
+//   --mdc-chip-outline-width: 0;
+//   --mdc-chip-outline-color: transparent;
+//   --mdc-chip-disabled-outline-color: transparent;
+//   --mdc-chip-focus-outline-color: transparent;
+//   --mdc-chip-hover-state-layer-opacity: 0.04;
+//   --mdc-chip-with-avatar-disabled-avatar-opacity: 1;
+//   --mdc-chip-flat-selected-outline-width: 0;
+//   --mdc-chip-selected-hover-state-layer-opacity: 0.04;
+//   --mdc-chip-with-trailing-icon-disabled-trailing-icon-opacity: 1;
+//   --mdc-chip-with-icon-disabled-icon-opacity: 1;
+//   --mat-chip-disabled-container-opacity: 0.4;
+//   --mat-chip-trailing-action-opacity: 0.54;
+//   --mat-chip-trailing-action-focus-opacity: 1;
+//   --mat-chip-trailing-action-state-layer-color: transparent;
+//   --mat-chip-selected-trailing-action-state-layer-color: transparent;
+//   --mat-chip-trailing-action-hover-state-layer-opacity: 0;
+//   --mat-chip-trailing-action-focus-state-layer-opacity: 0
+// }
+
+// .mat-mdc-standard-chip {
+//   --mdc-chip-disabled-label-text-color: #212121;
+//   --mdc-chip-elevated-container-color: #e0e0e0;
+//   --mdc-chip-elevated-selected-container-color: #e0e0e0;
+//   --mdc-chip-elevated-disabled-container-color: #e0e0e0;
+//   --mdc-chip-flat-disabled-selected-container-color: #e0e0e0;
+//   --mdc-chip-focus-state-layer-color: black;
+//   --mdc-chip-hover-state-layer-color: black;
+//   --mdc-chip-selected-hover-state-layer-color: black;
+//   --mdc-chip-focus-state-layer-opacity: 0.12;
+//   --mdc-chip-selected-focus-state-layer-color: black;
+//   --mdc-chip-selected-focus-state-layer-opacity: 0.12;
+//   --mdc-chip-label-text-color: #212121;
+//   --mdc-chip-selected-label-text-color: #212121;
+//   --mdc-chip-with-icon-icon-color: #212121;
+//   --mdc-chip-with-icon-disabled-icon-color: #212121;
+//   --mdc-chip-with-icon-selected-icon-color: #212121;
+//   --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: #212121;
+//   --mdc-chip-with-trailing-icon-trailing-icon-color: #212121;
+//   --mat-chip-selected-disabled-trailing-icon-color: #212121;
+//   --mat-chip-selected-trailing-icon-color: #212121
+// }
+
+// .mat-mdc-standard-chip.mat-mdc-chip-selected.mat-primary,
+// .mat-mdc-standard-chip.mat-mdc-chip-highlighted.mat-primary {
+//   --mdc-chip-disabled-label-text-color: white;
+//   --mdc-chip-elevated-container-color: #3f51b5;
+//   --mdc-chip-elevated-selected-container-color: #3f51b5;
+//   --mdc-chip-elevated-disabled-container-color: #3f51b5;
+//   --mdc-chip-flat-disabled-selected-container-color: #3f51b5;
+//   --mdc-chip-focus-state-layer-color: black;
+//   --mdc-chip-hover-state-layer-color: black;
+//   --mdc-chip-selected-hover-state-layer-color: black;
+//   --mdc-chip-focus-state-layer-opacity: 0.12;
+//   --mdc-chip-selected-focus-state-layer-color: black;
+//   --mdc-chip-selected-focus-state-layer-opacity: 0.12;
+//   --mdc-chip-label-text-color: white;
+//   --mdc-chip-selected-label-text-color: white;
+//   --mdc-chip-with-icon-icon-color: white;
+//   --mdc-chip-with-icon-disabled-icon-color: white;
+//   --mdc-chip-with-icon-selected-icon-color: white;
+//   --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: white;
+//   --mdc-chip-with-trailing-icon-trailing-icon-color: white;
+//   --mat-chip-selected-disabled-trailing-icon-color: white;
+//   --mat-chip-selected-trailing-icon-color: white
+// }
+
+// .mat-mdc-standard-chip.mat-mdc-chip-selected.mat-accent,
+// .mat-mdc-standard-chip.mat-mdc-chip-highlighted.mat-accent {
+//   --mdc-chip-disabled-label-text-color: white;
+//   --mdc-chip-elevated-container-color: #ff4081;
+//   --mdc-chip-elevated-selected-container-color: #ff4081;
+//   --mdc-chip-elevated-disabled-container-color: #ff4081;
+//   --mdc-chip-flat-disabled-selected-container-color: #ff4081;
+//   --mdc-chip-focus-state-layer-color: black;
+//   --mdc-chip-hover-state-layer-color: black;
+//   --mdc-chip-selected-hover-state-layer-color: black;
+//   --mdc-chip-focus-state-layer-opacity: 0.12;
+//   --mdc-chip-selected-focus-state-layer-color: black;
+//   --mdc-chip-selected-focus-state-layer-opacity: 0.12;
+//   --mdc-chip-label-text-color: white;
+//   --mdc-chip-selected-label-text-color: white;
+//   --mdc-chip-with-icon-icon-color: white;
+//   --mdc-chip-with-icon-disabled-icon-color: white;
+//   --mdc-chip-with-icon-selected-icon-color: white;
+//   --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: white;
+//   --mdc-chip-with-trailing-icon-trailing-icon-color: white;
+//   --mat-chip-selected-disabled-trailing-icon-color: white;
+//   --mat-chip-selected-trailing-icon-color: white
+// }
+
+// .mat-mdc-standard-chip.mat-mdc-chip-selected.mat-warn,
+// .mat-mdc-standard-chip.mat-mdc-chip-highlighted.mat-warn {
+//   --mdc-chip-disabled-label-text-color: white;
+//   --mdc-chip-elevated-container-color: #f44336;
+//   --mdc-chip-elevated-selected-container-color: #f44336;
+//   --mdc-chip-elevated-disabled-container-color: #f44336;
+//   --mdc-chip-flat-disabled-selected-container-color: #f44336;
+//   --mdc-chip-focus-state-layer-color: black;
+//   --mdc-chip-hover-state-layer-color: black;
+//   --mdc-chip-selected-hover-state-layer-color: black;
+//   --mdc-chip-focus-state-layer-opacity: 0.12;
+//   --mdc-chip-selected-focus-state-layer-color: black;
+//   --mdc-chip-selected-focus-state-layer-opacity: 0.12;
+//   --mdc-chip-label-text-color: white;
+//   --mdc-chip-selected-label-text-color: white;
+//   --mdc-chip-with-icon-icon-color: white;
+//   --mdc-chip-with-icon-disabled-icon-color: white;
+//   --mdc-chip-with-icon-selected-icon-color: white;
+//   --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: white;
+//   --mdc-chip-with-trailing-icon-trailing-icon-color: white;
+//   --mat-chip-selected-disabled-trailing-icon-color: white;
+//   --mat-chip-selected-trailing-icon-color: white
+// }
+
+.mat-mdc-chip.mat-mdc-standard-chip {
+  --mdc-chip-container-height: 28px
+}
+
+.mat-mdc-standard-chip {
+  --mdc-chip-label-text-font: "SegoeUI", "KhmerOSBattambang";
+  --mdc-chip-label-text-line-height: 20px;
+  --mdc-chip-label-text-size: 12px;
+  --mdc-chip-label-text-tracking: normal;
+  --mdc-chip-label-text-weight: 400
+}
+
+.mat-mdc-chip-set .mdc-evolution-chip-set__chips {
+  min-width: 0 !important;
+}

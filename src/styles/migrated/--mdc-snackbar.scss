@@ -1,0 +1,64 @@
+@import "../updated/m_variable.scss";
+
+// html {
+//   --mdc-snackbar-container-shape: 4px
+// }
+
+// html {
+//   --mdc-snackbar-container-color: #333333;
+//   --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+//   --mat-snack-bar-button-color: #ff4081
+// }
+
+html {
+  --mdc-snackbar-supporting-text-font: "SegoeUI", "KhmerOSBattambang";
+  // --mdc-snackbar-supporting-text-line-height: 20px;
+  // --mdc-snackbar-supporting-text-size: 14px;
+  // --mdc-snackbar-supporting-text-weight: 400
+}
+
+// :root {
+//     --color-primary: $color-primary;
+//     --color-invalid: $color-invalid;
+//     --color-light: $light;
+// }
+
+.default-snackbar {
+  font-family: "SegoeUI", "KhmerOSBattambang" !important;
+  display: flex !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  // background-color: $color-primary !important;
+  // color: $light !important;
+}
+
+.panel-success {
+  @extend .default-snackbar;
+  background-color: $main-color !important;
+  color: #fff;
+
+  --mdc-snackbar-container-color: $main-color !important;
+  --mdc-snackbar-supporting-text-color: #fff !important;
+  --mat-mdc-snack-bar-button-color: #fff !important;
+}
+
+.panel-error {
+  @extend .default-snackbar;
+  background-color: #e41f1f !important;
+  color: #fff;
+
+  --mdc-snackbar-container-color: #e41f1f !important;
+  --mdc-snackbar-supporting-text-color: #fff !important;
+  --mat-mdc-snack-bar-button-color: #fff !important;
+}
+
+.panel-warning {
+  @extend .default-snackbar;
+  background-color: #ffb65e !important;
+  color: #fff;
+
+  --mdc-snackbar-container-color: #ffb65e !important;
+  --mdc-snackbar-supporting-text-color: #fff !important;
+  --mat-mdc-snack-bar-button-color: #fff !important;
+}

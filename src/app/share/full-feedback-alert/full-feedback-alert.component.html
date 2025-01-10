@@ -1,0 +1,199 @@
+<div class="svg-icon" [ngClass]="{'reduce-size': data.type == TYPE.Error}">
+    <ng-container [ngSwitch]="data.type">
+        <!-- ------------ SUCCESS ICON ----------- -->
+        <ng-container *ngSwitchCase="TYPE.Success" [ngTemplateOutlet]="iconApproveTemplate"></ng-container>
+        <!-- ------------ INFO ICON ----------- -->
+        <ng-container *ngSwitchCase="TYPE.Info" [ngTemplateOutlet]="iconInfoTemplate"></ng-container>
+        <!-- ------------ QUESTION ICON ----------- -->
+        <ng-container *ngSwitchCase="TYPE.Question" [ngTemplateOutlet]="iconQuestionTemplate"></ng-container>
+        <!-- ------------ WARN ICON ----------- -->
+        <ng-container *ngSwitchCase="TYPE.Warning" [ngTemplateOutlet]="iconWarningTemplate"></ng-container>
+        <!-- ------------ ERROR ICON ----------- -->
+        <ng-container *ngSwitchCase="TYPE.Error" [ngTemplateOutlet]="iconErrorTemplate"></ng-container>
+    </ng-container>
+</div>
+
+<h2 mat-dialog-title class="custom-dialog-title">{{ (data.title || 'verify') | translate }}</h2>
+
+<mat-dialog-content class="custom-dialog-content">
+    <p *ngFor="let message of data.messages" class="desc">{{ message | translate }}</p>
+    <!-- <div class="detail"> -->
+        <ul>
+        <li *ngFor="let error of data.error_msg" class="error"> {{ error | translate }}</li>
+        </ul>
+    <!-- </div> -->
+    <div class="form-row mb-3" *ngIf="data.requiredReason">
+        <div class="col m-form form-group">
+            <label class="required" for="reason">{{ 'dialog.confirm.reason' | translate }}</label>
+            <textarea id="reason" class="form-control" [placeholder]="'public.reason' | translate" [formControl]="descriprion"></textarea>
+        </div>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center" class="mr-0 action">
+    <!-- <button class="m-button-outlined btn-close" mat-flat-button mat-dialog-close>
+        <mat-icon *ngIf="data.negativeIcon">{{data.negativeIcon}}</mat-icon> {{ (data.negative || 'btn_no') | translate }}
+    </button> -->
+
+    <button mat-button [mat-dialog-close]="false" class="m-button-outlined">
+      <mat-icon *ngIf="data.negativeIcon">{{data.negativeIcon}}</mat-icon>
+      <mat-icon *ngIf="!data.negativeIcon" style="transform: rotateY(180deg)">logout</mat-icon>
+      {{ (data.negative || 'btn_no') | translate }}
+    </button>
+
+    <button
+        *ngIf="data.requiredReason; else otherConfirm"
+        class="m-button-primary"
+        mat-raised-button color="primary"
+        [mat-dialog-close]="descriprion.value"
+        [disabled]="descriprion.invalid"
+    >
+      <mat-icon iconPositionEnd>{{data.positiveIcon || 'arrow_forward'}}</mat-icon>
+      {{ (data.positive || 'btn_yes') | translate }}
+    </button>
+    <ng-template #otherConfirm>
+        <button class="m-button-primary" *ngIf="data.confirm" mat-raised-button [mat-dialog-close]="true">
+            <mat-icon iconPositionEnd>{{data.positiveIcon || 'arrow_forward'}}</mat-icon>
+            {{ (data.positive || 'btn_yes') | translate }}
+        </button>
+    </ng-template>
+</mat-dialog-actions>
+
+<!-- ========================== ICON TEMPLATE ========================= -->
+<!-- ================================================================== -->
+
+<ng-template #iconApproveTemplate>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 416 416">
+            <g transform="translate(-48 -48)">
+                <path
+                    d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z"
+                    fill="none"
+                    stroke="#e4f4da"
+                    stroke-miterlimit="10"
+                    stroke-width="32"
+                    class="svg-success-1"
+                >
+                </path>
+                <path
+                    d="M352,176,217.6,336,160,272"
+                    fill="none"
+                    stroke="#a5dc86"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                    class="svg-success-2"
+                >
+                </path>
+            </g>
+    </svg>
+</ng-template>
+
+
+<ng-template #iconWarningTemplate>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 416 416">
+        <g transform="translate(14 142.341)">
+            <path
+                d="M12,7v93.66"
+                transform="translate(182 -29.648)"
+                fill="none"
+                stroke="#f8bb86"
+                stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="32" class="svg-warning-1"
+            >
+            </path>
+            <path
+                d="M12,17.172,12.156,17"
+                transform="translate(182.018 144.669)"
+                fill="none" stroke="#f8bb86"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+                class="svg-warning-2"
+            >
+            </path>
+            <path
+                d="M194,386c106.038,0,192-85.962,192-192S300.038,2,194,2,2,87.961,2,194,87.961,386,194,386Z"
+                transform="translate(0 -128.341)"
+                fill="none" stroke="#facea8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+                class="svg-warning-3"
+            >
+            </path>
+        </g>
+    </svg>
+</ng-template>
+
+
+<ng-template #iconInfoTemplate>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 416 416">
+        <g transform="translate(11 136.341)">
+            <path
+                d="M194,386c106.038,0,192-85.962,192-192S300.038,2,194,2,2,87.961,2,194,87.961,386,194,386Z"
+                transform="translate(3 -122.341)"
+                fill="none"
+                stroke="#c9dae1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+                class="svg-info-1"
+            >
+            </path>
+        </g>
+        <path
+            d="M64.819,77.612,9.859,84.5,7.891,93.62l10.8,1.992c7.056,1.68,8.448,4.224,6.912,11.256L7.891,190.1c-4.656,21.528,2.52,31.656,19.392,31.656,13.08,0,28.272-6.048,35.16-14.352l2.112-9.984c-4.8,4.224-11.808,5.9-16.464,5.9-6.6,0-9-4.632-7.3-12.792ZM66.5,27.5a24,24,0,1,1-24-24A24,24,0,0,1,66.5,27.5Z"
+            transform="translate(168.5 89.372)"
+            fill="#87adbd"
+            class="svg-info-2">
+        </path>
+    </svg>
+</ng-template>
+
+<ng-template #iconErrorTemplate>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 416 416">
+        <g id="warning-circled-outline-svgrepo-com" transform="translate(14 142.341)">
+            <path
+                d="M12,7V215.532"
+                transform="translate(106.838 -4.533) rotate(-45)"
+                fill="none"
+                stroke="#f27474"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+                class="svg-error-1"
+            >
+            </path>
+            <path
+                d="M12,7V213.109"
+                transform="translate(264.192 -21.503) rotate(45)"
+                fill="none"
+                stroke="#f27474"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+                class="svg-error-2"
+            >
+            </path>
+            <path
+                d="M194,386c106.038,0,192-85.962,192-192S300.038,2,194,2,2,87.961,2,194,87.961,386,194,386Z"
+                transform="translate(0 -128.341)"
+                fill="none"
+                stroke="#f27474"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+                class="svg-error-3"
+            >
+            </path>
+        </g>
+    </svg>
+</ng-template>
+
+<ng-template #iconQuestionTemplate>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 17 17">
+        <path d="M8,0A8,8,0,1,1,0,8,8,8,0,0,1,8,0Z" transform="translate(0.5 0.5)" fill="none" stroke="#463d97" stroke-linecap="round" stroke-width="1" class="svg-question-1"></path>
+        <path d="M8.5,9.5v-1L9.914,7.086A2,2,0,0,0,10.5,5.672V5.5a1.618,1.618,0,0,0-.894-1.447l-.211-.106a2,2,0,0,0-1.789,0L7.5,4a1.809,1.809,0,0,0-1,1.618V6.5" fill="none" stroke="rgba(70,61,151,0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill-rule="evenodd" class="svg-question-2"></path>
+        <path d="M1,0A1,1,0,1,1,0,1,1,1,0,0,1,1,0Z" transform="translate(7.5 11.5)" fill="rgba(70,61,151,0.8)" class="svg-question-3"></path>
+    </svg>
+</ng-template>

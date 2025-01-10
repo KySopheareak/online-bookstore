@@ -1,0 +1,72 @@
+<ng-container *ngTemplateOutlet="navigation; context: { $implicit: { menuList: menu, isSubMenu: false } }"></ng-container>
+<ng-template #navigation let-data>
+  <mat-nav-list class="menu" @subItem
+    [ngClass]="{
+      'main-menu': !data.isSubMenu,
+      'sub-menu': data.isSubMenu && !isMenuIcon,
+      'sub-menu-icon-only': data.isSubMenu && isMenuIcon
+    }"
+  >
+    <ng-container *ngFor="let menu of data.menuList">
+      <li class="list-menu" *ngIf="!menu.isNoPermission">
+
+        <!--------------- MENU ICON --------------->
+        <ng-container *ngIf="isMenuIcon; else fullMenu">
+          <a *ngIf="!menu.children; else menuGroupIcon"
+            mat-list-item
+            routerLinkActive="active"
+            matTooltipPosition="right"
+            (click)="onClickMenu()"
+            [matTooltip]="menu.name | translate"
+            [routerLink]="menu.path"
+          >
+            <mat-icon>{{ menu.icon }} </mat-icon>
+          </a>
+        </ng-container>
+
+        <ng-template #menuGroupIcon>
+          <button
+            class="list-item-button"
+            mat-list-item
+            matTooltipPosition="right"
+            [matTooltip]="menu.name | translate"
+            (click)="toggleExpendMenu(menu)"
+          >
+            <span>
+              <mat-icon [ngClass]="{'menu-icon': !isMenuIcon}">{{ menu.icon }} </mat-icon>
+              <span *ngIf="!isMenuIcon" class="menu-title">{{ menu.name | translate }}</span>
+            </span>
+          </button>
+        </ng-template>
+
+
+        <!--------------- FULL MENU --------------->
+        <ng-template #fullMenu>
+          <a *ngIf="!menu.children; else menuGroup"
+            mat-list-item
+            routerLinkActive="active"
+            (click)="onClickMenu()"
+            [routerLink]="menu.path"
+          >
+            <mat-icon class="menu-icon">{{ menu.icon }} </mat-icon>
+            <span class="menu-title">{{ menu.name | translate }}</span>
+          </a>
+        </ng-template>
+
+        <ng-template #menuGroup>
+          <button class="list-item-button" mat-list-item (click)="toggleExpendMenu(menu)">
+            <span>
+              <mat-icon class="menu-icon">{{ menu.icon }} </mat-icon>
+              <span class="menu-title">{{ menu.name | translate }}</span>
+            </span>
+            <mat-icon class="expand-icon">keyboard_arrow_down</mat-icon>
+          </button>
+        </ng-template>
+      </li>
+
+      <ng-container *ngIf="menu.children && menu.expanded">
+        <ng-container *ngTemplateOutlet=" navigation; context: { $implicit: { menuList: menu.children, isSubMenu: true } }"></ng-container>
+      </ng-container>
+    </ng-container>
+  </mat-nav-list>
+</ng-template>

@@ -1,0 +1,236 @@
+// @import "./variables";
+@import "./updated/m_variable.scss";
+
+mat-form-field {
+	line-height: 30px !important;
+}
+
+h4 {
+	font-size: 1rem !important;
+	font-family: "SegoeUI", "KhmerOSBattambang" !important;
+	color: $main-color;
+}
+
+// mat-icon {
+// 	margin-right: 8px;
+// 	vertical-align: middle;
+// }
+
+.mat-mdc-menu-panel {
+	max-width: unset !important;
+}
+
+.mat-mdc-menu-item {
+	color: black !important;
+
+	mat-icon {
+		color: $header-color !important;
+	}
+}
+
+.mat-mdc-tab-header {
+	border-bottom: 1px solid #d1d1d182 !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-tab-labels {
+	-webkit-touch-callout: none;
+	/* iOS Safari */
+	-webkit-user-select: none;
+	/* Safari */
+	-khtml-user-select: none;
+	/* Konqueror HTML */
+	-moz-user-select: none;
+	/* Old versions of Firefox */
+	-ms-user-select: none;
+	/* Internet Explorer/Edge */
+	user-select: none;
+	/* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-tab-label {
+	opacity: 1 !important;
+	color: #a3a3a3;
+	font-size: 16px;
+	//     color: $main-text-color;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-tab-label-active {
+	color: $main-color !important;
+}
+
+.mat-mdc-tooltip {
+	font-family: "SegoeUI", "KhmerOSBattambang" !important;
+	background: white;
+	color: $header-color !important;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.082);
+	border: 0.13rem solid #2a5298a4;
+	letter-spacing: 0.03rem;
+	padding: 0 6px !important;
+	border-radius: 13px !important;
+	min-width: 80px;
+	line-height: 1.5rem;
+	margin: 6px !important;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+tr.mat-mdc-row,
+tr.mat-mdc-footer-row {
+	height: 55px !important;
+}
+
+.mat-headline-6 {
+	font-size: 25px !important;
+	font-weight: bold !important;
+	color: $header-color;
+}
+
+.action-btns {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	button {
+		mat-icon {
+			margin: 0px !important;
+		}
+	}
+
+	mat-icon {
+		cursor: pointer;
+	}
+
+	mat-icon.remove {
+		color: $cancel;
+	}
+
+	mat-icon.confirm {
+		color: $submitted;
+	}
+
+	mat-icon.undo {
+		color: $returned;
+	}
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-form-field-appearance-outline .mat-form-field-outline-gap {
+	border-width: 1px !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+mat-form-field .mat-form-field-wrapper .mat-form-field-label {
+	width: max-content !important;
+	background-color: white !important;
+	margin-top: -7px !important;
+	padding-right: 7px !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-tab-body-content {
+	padding-top: 5px !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of dialog that may no longer apply for the MDC version.*/
+// mat-dialog-actions {
+// 	padding: 20px 0px !important;
+// }
+
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version.*/
+.mat-mdc-slide-toggle.mat-checked .mat-slide-toggle-bar {
+	background: #194c5d69;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version.*/
+.mat-mdc-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+	background: #194c5d;
+}
+
+.mat-primary-light {
+	&.mat-mdc-raised-button {
+		background-color: $header-color !important;
+	}
+
+	&.mat-mdc-unelevated-button {
+		background-color: $header-color !important;
+		color: #ffffff !important;
+	}
+}
+
+.mat-primary-dark {
+	&.mat-mdc-mini-fab {
+		background-color: $main-color !important;
+		color: #ffffff;
+	}
+
+	&.mat-mdc-unelevated-button {
+		background-color: $main-color !important;
+		color: #ffffff;
+	}
+}
+
+.app-error {
+	background-color: rgba($color: #ff0606, $alpha: 1);
+	color: #ffffff;
+	text-align: center;
+}
+
+.search-idcard-alert {
+	.mat-mdc-dialog-container {
+		border-radius: 24px;
+	}
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+.mat-checkbox-frame {
+	border-color: #88a7c4;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+	background: #4190f2 !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+.mat-checkbox-disabled.mat-checkbox-checked .mat-checkbox-background,
+.mat-checkbox-disabled.mat-checkbox-indeterminate .mat-checkbox-background {
+	background: #b0b0b0 !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+.mat-checkbox-background,
+.mat-checkbox-frame {
+	border-radius: 4px !important;
+}
+
+.file-viewer {
+	z-index: 1 !important;
+	pointer-events: none !important;
+}
+
+.file-viewer .cdk-overlay-dark-backdrop {
+	background: rgba(6, 39, 67, 0);
+}
+
+.cdk-overlay-pane.file-view {
+	box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12) !important;
+	min-width: 200px !important;
+	min-height: 160px !important;
+
+	.mat-dialog-container {
+		box-shadow: none;
+	}
+}
+
+.resize-dialog {
+	resize: both;
+	overflow: auto;
+	background: transparent;
+	border-radius: 10px;
+}

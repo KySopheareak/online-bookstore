@@ -24,7 +24,8 @@ export class OauthRequestService {
     private localStorageService: LocalStorageService,
     private router: Router,
     private snackBar: MatSnackBar,
-    private translate: TranslateService) {
+    private translate: TranslateService
+    ) {
   }
 
   get<T>(path: string, request: RequestParam, responseType: XMLHttpRequestResponseType = "json") {

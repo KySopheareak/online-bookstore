@@ -1,0 +1,84 @@
+@import "./variables";
+
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+mat-chip {
+  color: white !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+mat-chip.approved {
+  background: rgb(0, 174, 0, 0.1) !important;
+  color: $success !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+mat-chip.rejected {
+  background: rgb(255, 105, 105, 0.1) !important;
+  color: $rejected !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+mat-chip.returned {
+  background: rgb(210, 152, 3, 0.1) !important;
+  color: $warning !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+mat-chip.pending {
+  background: rgb(176, 176, 176, 0.1) !important;
+  color: $waiting !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+mat-chip.paid {
+  background: rgb(143, 151, 166, 0.1) !important;
+  color: $new-request !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+mat-chip.submitted {
+  background: rgb(0, 176, 138, 0.1) !important;
+  color: $submit !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+mat-chip.confirm {
+  background: rgb(0, 214, 203, 0.1) !important;
+  color: $verify !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+mat-chip-list.lst-day {
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+  mat-chip.zero {
+    color: $card-title-color !important;
+    background-color: $zero;
+  }
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+  mat-chip.one {
+    color: $card-title-color !important;
+    background-color: $one;
+  }
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+  mat-chip.two {
+    color: $card-title-color !important;
+    background-color: $two;
+  }
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+  mat-chip.three {
+    color: $card-title-color !important;
+    background-color: $three;
+  }
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+  mat-chip.four {
+    color: $card-title-color !important;
+    background-color: $four;
+  }
+
+  button {
+    color: white;
+    background-color: darken($color: $main-background-color, $amount: 5%);
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,47 @@
+@import "./m_variable.scss";
+
+@font-face {
+	font-family: "KhmerOSBattambang";
+	src: url("../../assets/fonts/KhmerOSBattambang.ttf");
+}
+
+@font-face {
+	font-family: "SegoeUI";
+	src: url("../../assets/fonts/SegoeUI.ttf");
+}
+
+/* CONTAINER */
+.m-container {
+	background: white;
+	width: 100%;
+	padding: 20px 32px;
+	border-radius: 8px;
+	position: relative;
+
+	p {
+		font-size: $m-container-title;
+		font-weight: bold;
+		font-family: "SegoeUI", "KhmerOSBattambang";
+		color: black;
+		margin-left: -9px;
+	}
+
+	p.lbl-doc {
+		font-weight: normal;
+		font-size: 15px;
+		font-family: "SegoeUI", "KhmerOSBattambang";
+		margin-left: -9px;
+	}
+
+  &.fit-content {
+    height: fit-content !important;
+  }
+}
+
+
+@media (max-width: 414px) {
+	.m-container {
+		overflow: auto;
+		padding: 20px 16px;
+	}
+}

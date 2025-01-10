@@ -1,0 +1,305 @@
+@import "./variables";
+@import "./updated/m_variable.scss";
+
+
+.progress-tracker {
+  font-family: "SegoeUI", "KhmerOSBattambang" !important;
+  margin: 15px !important;
+}
+
+.normal-table {
+  margin: 8px 20px !important;
+
+  .table-sign {
+    margin: 0 16px !important;
+    color: #194c5d !important;
+    font-weight: 100 !important;
+  }
+
+  tr {
+    background: none !important;
+
+    &:hover {
+      background: none !important;
+    }
+
+    td {
+      padding: 7px 0 !important;
+
+      .label {
+        width: 200px !important;
+        color: #A3A3A3 !important;
+        display: flex !important;
+
+        &::after {
+          content: ("៖") !important;
+          margin-left: auto !important;
+          margin-right: 12px !important;
+        }
+      }
+    }
+
+    .label {
+      color: #A3A3A3 !important;
+      width: 150px !important;
+    }
+  }
+
+  .value {
+    word-break: break-all !important;
+    word-wrap: break-word !important;
+    vertical-align: baseline !important;
+  }
+}
+
+.title-2 {
+  margin-bottom: 12px !important;
+  margin-top: -4px !important;
+
+  p {
+    margin: 4px 0px !important;
+    font-size: 15px !important;
+    color: $header-color !important;
+    font-weight: 700 !important;
+  }
+
+  mat-icon {
+    height: 20px !important;
+    width: 20px !important;
+  }
+}
+
+.title {
+  color: #313131 !important;
+
+  .success,
+  .approved {
+    color: $success !important;
+  }
+
+  .locked,
+  .return,
+  .returned, .hc_returned, .ben_hc_returned {
+    color: $warning !important;
+  }
+
+
+  .rejected {
+    color: $rejected !important;
+  }
+
+  .new-request {
+    color: $new-request !important;
+  }
+
+  .assign {
+    color: $assign !important;
+  }
+
+  .highlight {
+    color: $highlight !important;
+  }
+
+  .active {
+    color: $main-color !important;
+  }
+
+  .submit,
+  .submitted {
+    color: $main-color !important;
+  }
+
+  .closed {
+    color: $closed !important;
+  }
+
+  .suspended,
+  .inactive {
+    color: $suspended !important;
+  }
+
+  .reopened,
+  .draft {
+    color: $re_open !important;
+  }
+
+  .normal {
+    color: #000000 !important;
+    // font-weight: normal !important;
+  }
+
+  .progress-title {
+    margin: 0 !important;
+
+    span {
+      margin-right: 10px !important;
+    }
+  }
+
+  p.item {
+    margin-bottom: 0px !important;
+    margin-left: 0 !important;
+    font-weight: normal !important;
+  }
+
+  .date {
+    color: #A3A3A3 !important;
+  }
+}
+
+.progress-marker {
+  padding-top: 8px !important;
+}
+
+.progress-marker::before {
+  width: 25px !important;
+  height: 25px !important;
+  // box-shadow: 0px 0px 3px $success !important;
+  border: 8px solid #DBEDE1 !important;
+  background-color: $success !important;
+}
+
+.progress-marker::after {
+  z-index: 1 !important;
+  left: -8px !important;
+  top: 27px !important;
+  height: calc(100% - 19px) !important;
+  width: 2px !important;
+  background-color: #53AD72 !important;
+}
+
+.progress-step.is-complete .progress-marker::before,
+.progress-step.is-progress .progress-marker::before {
+  background-color: $success !important;
+}
+
+.progress-step.is-rejected .progress-marker::before,
+.progress-step.is-progress .progress-marker::before {
+  background-color: $rejected !important;
+}
+
+.progress-step.new-request .progress-marker::before,
+.progress-step.is-progress .progress-marker::before {
+  background-color: $new-request !important;
+}
+
+.main-box {
+  padding: 4px 12px 20px 30px !important;
+  width: 100% !important;
+
+  .progress-text {
+    display: flex !important;
+    width: 100% !important;
+    padding: 4px 12px 12px 33px !important;
+
+    .title {
+      margin-bottom: 0 !important;
+      width: 100%;
+      display: unset !important;
+    }
+
+    p,
+    h4 {
+      padding-bottom: 0.7em !important;
+    }
+
+    p {
+      label {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    h4.date {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .content {
+    .new-request {
+      color: $new-request !important;
+    }
+
+    ul {
+      margin-bottom: 15px !important;
+
+      li {
+        margin: 10px 0px !important;
+      }
+    }
+  }
+}
+
+.progress-tracker--vertical .progress-text {
+  padding: 0 12px 5px 0px !important;
+}
+
+// .progress-step:hover .progress-marker::before {
+//   opacity: 0.7 !important;
+// }
+
+.li-empty {
+  border-bottom: 1px solid #eaeaea !important;
+}
+
+.progress-step h4.date {
+  min-width: 185px !important;
+}
+
+.comment-box {
+  border: 1px solid #dfdfdf !important;
+  border-radius: 5px !important;
+  margin-top: 4px !important;
+  position: relative !important;
+  padding: 10px 12px !important;
+  min-width: 50% !important;
+
+  mat-icon {
+    position: absolute !important;
+    top: -11px !important;
+    border-radius: 50% !important;
+    width: 23px !important;
+    height: 23px !important;
+    padding: 2px !important;
+    background-color: white !important;
+    font-size: 18px !important;
+    left: 5px !important;
+  }
+
+  .desc {
+    margin: 0px !important;
+    word-break: break-word !important;
+    white-space: pre-wrap !important;
+    font-size: 14px !important;
+
+    span {
+      margin-right: 10px !important;
+    }
+
+    .success {
+      color: $success !important;
+    }
+
+    .rejected {
+      color: $rejected !important;
+    }
+
+    .new-request {
+      color: $new-request !important;
+    }
+  }
+}
+
+
+.desc {
+  margin: 0px !important;
+  word-break: break-word !important;
+  white-space: pre-line !important;
+  font-size: 14px !important;
+  text-align: start !important; 
+  line-height: 25px !important;
+  span {
+      padding: 0 !important;
+      display: block; 
+      text-align: start !important; 
+  }
+}

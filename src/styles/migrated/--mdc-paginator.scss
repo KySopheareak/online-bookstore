@@ -1,0 +1,63 @@
+.mat-mdc-paginator-container {
+  // Formcontrol select page size
+  // ===================================
+  .mat-mdc-paginator-page-size {
+      .mat-mdc-paginator-page-size-label {
+          font-size: 12px !important;
+      }
+
+      mat-form-field.mat-mdc-form-field {
+          width: 65px !important;
+
+          .mat-mdc-text-field-wrapper {
+              outline: none !important;
+              line-height: unset !important;
+              padding: 0 4px !important;
+
+              .mat-mdc-form-field-flex {
+                  .mdc-notched-outline {
+                      .mdc-notched-outline__leading {
+                          border-left: none !important;
+                          border-top: none !important;
+                          border-radius: unset !important;
+                      }
+
+                      .mdc-notched-outline__trailing {
+                          border-left: none !important;
+                          border-top: none !important;
+                          border-right: none !important;
+                          border-radius: unset !important;
+                      }
+                  }
+
+                  .mat-mdc-form-field-infix {
+                      min-height: unset !important;
+
+                      .mat-mdc-select {
+                          .mat-mdc-select-min-line {
+                              font-size: 12px !important;
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
+
+  // Pagaintion range action
+  // ===================================
+  .mat-mdc-paginator-range-actions {
+      .mat-mdc-paginator-range-label {
+          font-size: 12px !important;
+          font-weight: normal !important;
+          color: #0000008a !important;
+      }
+  }
+}
+
+.mat-mdc-option.mdc-list-item {
+  min-height: unset !important;
+  font-size: 12px !important;
+  line-height: 3em !important;
+  height: 3em !important;
+}

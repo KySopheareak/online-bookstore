@@ -1,0 +1,134 @@
+@import "./m_variable.scss";
+
+@mixin beautify-chip($color, $percent) {
+  background: lighten($color: $color, $amount: $percent) !important;
+  color: $color !important;
+  --mdc-chip-label-text-color: $color !important;
+  font-size: 12px;
+  min-height: 28px !important;
+}
+
+.m-draft {
+  @include beautify-chip($draft, 43%);
+}
+
+.m-confirm,
+.m-confirmed {
+  @include beautify-chip($confirmed, 43%);
+}
+
+.m-pending {
+  background: #ffc491 !important;
+  color: #a33509 !important;
+  --mdc-chip-label-text-color: $color !important;
+  font-size: 12px;
+  min-height: 28px !important;
+}
+
+.m-hc_submitted,
+.m-submitted {
+  @include beautify-chip($submitted, 48%);
+}
+
+.m-hc_accepted,
+// .m-approved,
+.m-accepted,
+.m-printed,
+.m-valid {
+  @include beautify-chip($approved, 45%);
+}
+
+// .m-hc_accepted {
+//   border: 1px solid rgba(0, 156, 21, 0.3);
+// }
+
+.m-hc_rejected,
+.m-rejected,
+.m-not_found,
+.m-invalid {
+  @include beautify-chip($rejected, 48%);
+}
+
+.m-hc_returned,
+.m-locked,
+.m-returned,
+.m-invalid_salary {
+  @include beautify-chip($returned, 48%);
+}
+
+.m-paid,
+.m-already_paid {
+  @include beautify-chip($paid, 45%);
+}
+
+.m-suspended {
+  @include beautify-chip($suspended, 40%);
+}
+
+.m-closed {
+  @include beautify-chip($closed, 60%);
+}
+
+.m-re_open {
+  @include beautify-chip($re_open, 55%);
+}
+
+.m-allocate {
+  @include beautify-chip($allocate, 40%);
+}
+
+.m-transferred {
+  background: #c8d8ff !important;
+  color: #31036a !important;
+  --mdc-chip-label-text-color: $color !important;
+  font-size: 12px;
+
+}
+
+.m-assign {
+  @include beautify-chip(#e91e63, 40%);
+}
+
+.m-update {
+  @include beautify-chip(#9c27b0, 50%);
+}
+
+.m-new, 
+.m-mismatched {
+  background: #f7e696 !important;
+  --mdc-chip-label-text-color:  #b3970e !important;
+  padding: 0px 10px !important;
+  font-size: 12px;
+  min-height: 28px !important;
+}
+
+.m-active,
+.m-create {
+  background-color: #53ff97bd !important;
+  --mdc-chip-label-text-color: #0d910dc9 !important;
+  // color: #53ad72 !important;
+  // padding: 0px 24px !important;
+  // font-size: 12px;
+  // min-height: 28px !important;
+}
+.m-approved, 
+.m-matched {
+  background-color: #98FD9A !important;
+  --mdc-chip-label-text-color: #02ab02f0 !important;
+}
+.m-accept {
+  background: #9ed1ff !important;
+  color: #006d8f !important;
+  --mdc-chip-label-text-color: $color !important;
+  font-size: 12px;
+  min-height: 28px !important;
+}
+
+.m-completed {
+  background: #9ed1ff !important;
+  color: #006d8f !important;
+  --mdc-chip-label-text-color: $color !important;
+  font-size: 12px;
+  min-height: 28px !important;
+}
+

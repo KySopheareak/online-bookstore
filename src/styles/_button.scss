@@ -1,0 +1,66 @@
+@import "./variables";
+
+.btn-disabled {
+  background-color: #e9ecef !important;
+  cursor: not-allowed;
+  color: #a2a2a2 !important;
+}
+
+button.main {
+  background-color: $main-color;
+  color: white;
+  min-width: 125px;
+
+  mat-icon {
+    margin-top: -4px;
+  }
+}
+
+button.normal {
+  min-width: 125px;
+}
+
+button.reject {
+  background-color: $cancel !important;
+  color: white;
+}
+
+button.return {
+  background-color: $return !important;
+  color: white;
+}
+
+button.upload {
+  background-color: $upload !important;
+  color: white;
+}
+
+button,
+a {
+  &.approve {
+    background-color: $success !important;
+  }
+  &.locked {
+    background-color: $warning !important;
+  }
+  &.hc_approve {
+    border: 2px solid rgba(255, 243, 79, 0.6);
+  }
+}
+
+div.group-btn {
+  display: flex;
+  margin: 15px 0px;
+
+  div.multi-left {
+    button:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  div.multi-right {
+    button:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}

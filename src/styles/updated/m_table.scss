@@ -1,0 +1,138 @@
+@import "./m_variable.scss";
+
+@font-face {
+	font-family: "KhmerOSBattambang";
+	src: url("../../assets/fonts/KhmerOSBattambang.ttf");
+}
+
+@font-face {
+	font-family: "SegoeUI";
+	src: url("../../assets/fonts/SegoeUI.ttf");
+}
+
+/* TABLE */
+.m-table {
+	border-radius: 8px;
+	margin-bottom: 20px;
+
+	th {
+		color: $header-color !important;
+		border-bottom: 1px solid #f7f7f7;
+		border-top: 1px solid white !important;
+    text-wrap: nowrap !important;
+	}
+
+	tr {
+		background: white !important;
+		border-top: 1px solid #f7f7f7;
+		border-bottom: 1px solid #f7f7f7;
+		td {
+			color: $data-color !important;
+		}
+	}
+
+	.m-chip-center {
+    .mdc-evolution-chip-set {
+      justify-content: center !important;
+    }
+
+		.mat-mdc-chip {
+			white-space: nowrap;
+		}
+		.mat-mdc-chip:focus {
+			background: inherit;
+		}
+	}
+	/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version. */
+	.mat-slide-toggle-thumb {
+		background: lightgray !important;
+	}
+	/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version. */
+	.mat-slide-toggle-bar {
+		background: white !important;
+		border: 1px solid lightgray !important;
+	}
+	/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version. */
+	.mat-mdc-slide-toggle.mat-checked .mat-slide-toggle-bar {
+		background: white;
+		border: 1px solid #32a4ac !important;
+	}
+	/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version. */
+	.mat-mdc-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+		background: #32a4ac !important;
+	}
+
+	.action-btns {
+		button {
+			padding: unset !important;
+			margin-left: 8px;
+			width: 30px;
+			height: 30px;
+
+			mat-icon {
+				// font-size: 16px !important;
+				// margin-top: -13px !important;
+				// vertical-align: middle !important;
+
+
+        vertical-align: middle !important;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+			}
+		}
+
+		.m-icon-button-resume {
+			color: #00ae00 !important;
+			background: url("../../assets/icons/auto_renew.svg") no-repeat !important;
+		}
+
+		.m-icon-button-suspend {
+			background: url("../../assets/icons/pause.svg") no-repeat !important;
+			color: #de9d24 !important;
+		}
+
+		.m-icon-button-close {
+			background: url("../../assets/icons/do_not_disturb_on_black_24dp.svg") no-repeat !important;
+			color: #ff3c3c !important;
+		}
+
+		.m-icon-button-edit {
+			color: #de9d24 !important;
+			border: 1px solid #de9d24 !important;
+		}
+
+		.m-icon-button-view {
+			background: url('/assets/icons/visibility_black_24dp.svg') no-repeat !important;
+			color: $header-color;
+		}
+
+		.m-icon-button-delete {
+			background: url("../../assets/icons/delete_icon.svg") !important;
+			color: #ff3c3c !important;
+		}
+	}
+}
+
+.m-table-container {
+  padding: 5px 11px;
+  overflow-x: auto;
+  width: 100% !important;
+
+  .m-table {
+    margin-bottom: 0;
+  }
+}
+
+.m-paginator {
+	width: 100%;
+}
+
+.m-right {
+	text-align: right !important;
+}
+
+.m-center {
+	text-align: center !important;
+}

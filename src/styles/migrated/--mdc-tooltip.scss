@@ -1,0 +1,16 @@
+// html {
+//   --mdc-plain-tooltip-container-shape: 4px;
+//   --mdc-plain-tooltip-supporting-text-line-height: 16px
+// }
+
+html {
+  --mdc-plain-tooltip-container-color: none;
+  --mdc-plain-tooltip-supporting-text-color: $main-color;
+}
+
+html {
+  --mdc-plain-tooltip-supporting-text-font: "SegoeUI", "KhmerOSBattambang";
+  --mdc-plain-tooltip-supporting-text-size: 12px;
+  // --mdc-plain-tooltip-supporting-text-weight: 400;
+  --mdc-plain-tooltip-supporting-text-tracking: normal;
+}

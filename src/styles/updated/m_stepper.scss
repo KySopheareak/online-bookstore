@@ -1,0 +1,14 @@
+.m-stepper {
+            .mat-vertical-stepper-content {
+                        visibility: visible !important;
+                        height: 100% !important;
+            }
+
+            .mat-stepper-header.cdk-keyboard-focused,
+            .mat-stepper-header.cdk-program-focused,
+            .mat-step-header:hover:not([aria-disabled]),
+            .mat-step-header:hover[aria-disabled="false"],
+            .mat-step-header[aria-selected="true"] {
+                        background: unset !important;
+            }
+}

@@ -1,0 +1,35 @@
+@import "./updated/m_variable.scss";
+.mat-submit {
+  background-color: #137d8e;
+  color: #fff;
+}
+
+// button {
+//     mat-icon {
+//         margin-right: 8px;
+//     }
+// }
+
+.filter {
+  overflow: unset !important;
+
+  .m-form-round {
+    label {
+      color: $main-color !important;
+    }
+  }
+}
+.m-inactive {
+  @extend .m-closed;
+}
+
+.m-outlined-warn {
+  background: white !important;
+  color: $cancel !important;
+  border: 1px solid $cancel !important;
+}
+
+.m-icon-button-outlined-warn {
+  @extend .m-icon-button;
+  @extend .m-outlined-warn;
+}

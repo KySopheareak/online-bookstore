@@ -1,0 +1,30 @@
+html .mat-mdc-slide-toggle.mat-accent {
+  --mdc-switch-selected-focus-state-layer-color: #32a4ac;
+  --mdc-switch-selected-handle-color: #32a4ac;
+  --mdc-switch-selected-hover-state-layer-color: #32a4ac;
+  --mdc-switch-selected-pressed-state-layer-color: #32a4ac;
+  --mdc-switch-selected-focus-handle-color: #2b8d94;
+  --mdc-switch-selected-hover-handle-color: #2b8d94;
+  --mdc-switch-selected-pressed-handle-color: #2b8d94;
+  --mdc-switch-selected-focus-track-color: #fff;
+  --mdc-switch-selected-hover-track-color: #fff;
+  --mdc-switch-selected-pressed-track-color: #fff;
+  --mdc-switch-selected-track-color: #fff
+}
+
+.mdc-switch {
+  width: 36px !important;
+}
+
+// .mdc-switch .mdc-switch__track {
+//   border: 1px solid #32a4ac !important;
+// }
+
+.mdc-switch:enabled .mdc-switch__track::before {
+  border: 1px solid #e0e0e0 !important;
+}
+
+.mdc-switch:enabled .mdc-switch__track::after {
+  border: 1px solid #32a4ac !important;
+}
+

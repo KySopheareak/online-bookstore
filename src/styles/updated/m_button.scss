@@ -1,0 +1,231 @@
+@import "./m_variable.scss";
+
+@font-face {
+  font-family: "KhmerOSBattambang";
+  src: url("../../assets/fonts/KhmerOSBattambang.ttf");
+}
+
+@font-face {
+  font-family: "SegoeUI";
+  src: url("../../assets/fonts/SegoeUI.ttf");
+}
+
+/* BUTTON */
+.m-button {
+  min-width: 100px !important;
+  font-size: 14px !important;
+  border-radius: 60px !important;
+  padding-right: 16px !important;
+  text-wrap: nowrap;
+
+  mat-icon {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+    margin: 0px;
+
+    &[data-mat-icon-type='svg'] {
+      transform: scale(0.9);
+      margin-top: -6px;
+      width: 20px;
+      height: 30px;
+    }
+  }
+}
+
+// .invert {
+//   padding-right: 16px !important;
+//   padding-left: 30px !important;
+
+//   mat-icon {
+//     margin-right: 0 !important;
+//     margin-left: 8px !important;
+//   }
+// }
+
+button.m-invalid {
+  border: 1px solid #dc3545 !important;
+}
+
+input.m-invalid {
+  border: 1px solid #dc3545 !important;
+}
+
+// .m-invalid {
+// 	button {
+
+// 	}
+// 	border: 1px solid #dc3545 !important;
+// }
+
+.no-padding {
+  padding: 0 16px !important;
+}
+
+.m-primary {
+  background: $main-color !important;
+  color: white;
+}
+
+.m-outlined {
+  background: white !important;
+  color: $main-color !important;
+  border: 1px solid $main-color !important;
+}
+
+.m-button-primary {
+  @extend .m-button;
+  @extend .m-primary;
+}
+
+.m-button-edit {
+  @extend .m-button;
+  color: #de9d24 !important;
+  border: 1px solid #de9d24 !important;
+  background: white !important;
+}
+
+.m-button-outlined {
+  @extend .m-button;
+  @extend .m-outlined;
+}
+
+.m-icon-button {
+  //   padding-left: 8px !important;
+  border-radius: 50% !important;
+
+  mat-icon {
+    // font-size: 20px !important;
+    vertical-align: sub !important;
+  }
+}
+
+.m-icon-button-primary {
+  @extend .m-icon-button;
+  @extend .m-primary;
+  box-shadow: 0 3px 6px 0px rgb(0 0 0 / 16%);
+}
+
+.m-icon-button-outlined {
+  @extend .m-icon-button;
+  @extend .m-outlined;
+}
+
+.m-button-disabled {
+  cursor: not-allowed;
+  background: #f7f7f7 !important;
+  border: 1px solid #dbdbdb !important;
+  p {
+    color: black !important;
+  }
+
+  &::after {
+    display: inline-block !important;
+    margin-left: 0.255em !important;
+    vertical-align: 0.255em !important;
+    content: "";
+    border-top: 0.3em solid $disabled !important;
+    border-right: 0.3em solid #0000 !important;
+    border-bottom: 0 !important;
+    border-left: 0.3em solid #0000 !important;
+  }
+}
+
+.m-icon-button-edit {
+  color: #de9d24 !important;
+  border: 1px solid #de9d24 !important;
+}
+
+.m-icon-button-delete {
+  background: url("../../assets/icons/delete_icon.svg") no-repeat !important;
+  color: #ff3c3c !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.m-icon-button-remove {
+  @extend .m-icon-button;
+  background: white !important;
+  color: #ff3c3c !important;
+  border: 1px solid #ff3c3c !important;
+}
+
+/* BUTTON SIZE */
+.s-sm {
+  padding: 0 16px !important;
+}
+
+.s-md {
+  padding: 4px 20px !important;
+}
+
+.s-m {
+  padding: 6px 20px !important;
+}
+
+.s-lg {
+  padding: 8px 24px !important;
+}
+
+/* INLINE ICON BUTTON */
+.reset-icon {
+  background: url("../../assets/icons/reset-icon.svg");
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+.mat-mdc-raised-button.mat-button-disabled:not([class*="mat-elevation-z"]) {
+  background-color: #0000001f !important;
+  color: #00000042 !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+.mat-mdc-button.mat-button-disabled:not([class*="mat-elevation-z"]) {
+  background-color: #0000001f !important;
+  color: #00000042 !important;
+}
+
+.btn-filter-group {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.min-width-fit-content {
+  min-width: fit-content !important;
+}
+
+button {
+  &.form-control {
+    &.open-dialog {
+      &::after {
+        content: "";
+        border: 5px solid;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.btn-search-group {
+  width: 100%;
+  margin-top: 12px;
+
+  button {
+    &:not(:last-child) {
+      margin-right: 14px;
+
+      @media (max-width: 991px) {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

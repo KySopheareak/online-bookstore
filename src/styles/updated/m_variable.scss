@@ -1,0 +1,45 @@
+$container-backgroud: #f3f6f9;
+$main-color: #004281;
+// $main-color: #105670;
+$allocate: #4A148C;
+/* CONTAINER */
+$m-container-backgroud: #fff;
+$m-container-title: 16px;
+
+/* CARD */
+$card-title-color: #a3a3a3;
+$card-content-color: #194c5d;
+
+/* TABLE */
+$header-color: #2a5298;
+// $header-color: #105670;
+$data-color: #303030;
+
+/* STATUS */
+$draft: #777777;
+$confirmed: #4d5081;
+$pending: #b3970e;
+$submitted: #4c2aa7;
+$approved: #17ad14;
+$rejected: #d11a1a;
+$returned: #d65900;
+$paid: #165fb3;
+$disabled: #a3a3a3a6;
+$suspended: #d76234;
+$closed: #680808;
+$re_open: #21786f;
+$cancel: #e41f1f;
+
+$zero: #27b300;
+$one: #00c890;
+$two: #e6bd20;
+$three: #fb9d58;
+$four: #ff1c1c;
+
+/**
+ * Screen Sizes
+ */
+$phone: 414px;
+$ipad: 768px;
+$medium-pc: 1300px;
+$large-screen: 1580px;

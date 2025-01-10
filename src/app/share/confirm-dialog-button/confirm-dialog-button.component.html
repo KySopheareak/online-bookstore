@@ -1,0 +1,66 @@
+<div class="svg-icon">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 17 17"
+  >
+    <path
+      d="M8,0A8,8,0,1,1,0,8,8,8,0,0,1,8,0Z"
+      transform="translate(0.5 0.5)"
+      fill="none"
+      stroke="#463d97"
+      stroke-linecap="round"
+      stroke-width="1"
+      class="svg-question-1"
+    ></path>
+    <path
+      d="M8.5,9.5v-1L9.914,7.086A2,2,0,0,0,10.5,5.672V5.5a1.618,1.618,0,0,0-.894-1.447l-.211-.106a2,2,0,0,0-1.789,0L7.5,4a1.809,1.809,0,0,0-1,1.618V6.5"
+      fill="none"
+      stroke="rgba(70,61,151,0.8)"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1"
+      fill-rule="evenodd"
+      class="svg-question-2"
+    ></path>
+    <path
+      d="M1,0A1,1,0,1,1,0,1,1,1,0,0,1,1,0Z"
+      transform="translate(7.5 11.5)"
+      fill="rgba(70,61,151,0.8)"
+      class="svg-question-3"
+    ></path>
+  </svg>
+</div>
+
+<h2 mat-dialog-title class="custom-dialog-title">{{ title | translate }}</h2>
+
+<mat-dialog-content
+  class="custom-dialog-content"
+  *ngIf="confirm_type == CONFIRM_TYPE_NORMAL"
+>
+  <p class="desc">
+    <mat-icon *ngIf="data.type_icon">{{ data.type_icon }}</mat-icon>
+    {{ confirm_desc | translate : { param: confirm_desc_param | translate } }}
+  </p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center" *ngIf="!is_no_action">
+  <!-- Close Button -->
+  <button mat-button mat-dialog-close class="m-button-outlined">
+    <mat-icon style="transform: rotateY(180deg)">logout</mat-icon>
+    {{ "close" | translate }}
+  </button>
+
+  <!-- Button(s) for normal confirm -->
+  <ng-container *ngIf="confirm_type == CONFIRM_TYPE_NORMAL">
+    <button
+      mat-raised-button
+      class="m-button-primary pr-1"
+      [mat-dialog-close]="true"
+    >
+      {{ "confirm" | translate }}
+      <mat-icon iconPositionEnd>arrow_forward</mat-icon>
+    </button>
+  </ng-container>
+</mat-dialog-actions>

@@ -1,0 +1,1242 @@
+@use "@angular/material" as mat;
+@import "@angular/cdk/overlay-prebuilt.css";
+
+@import "./custom-material";
+@import "./table";
+@import "./button";
+@import "./variables";
+@import "./bootstrap-custom";
+@import "./custom-ngx-intl-input";
+@import "progress-tracker/src/styles/progress-tracker.scss";
+@import "./custom-progress-tracker";
+@import "./custom-margin";
+@import "./custom-mat-chip";
+@import "./custom-min-width";
+@import "./mat-custom";
+@import "./gap.scss";
+
+/* Importing new updated style files */
+@import "../styles/updated/m_variable.scss";
+@import "./updated/m_container.scss";
+@import "./updated/m_button.scss";
+@import "./updated/m_card.scss";
+@import "./updated/m_table.scss";
+@import "./updated/m_form.scss";
+@import "./updated/m_chip.scss";
+@import "./updated/m_stepper.scss";
+@import "./updated/m_typography.scss";
+@import "./list.scss";
+
+@font-face {
+  font-family: "KhmerMuol";
+  src: url("./../assets/fonts/KhmerOSmuollight.ttf");
+}
+
+@font-face {
+  font-family: "KhmerOSBattambang";
+  src: url("./../assets/fonts/KhmerOSBattambang.ttf");
+}
+
+@font-face {
+  font-family: "SegoeUI";
+  src: url("./../assets/fonts/SegoeUI.ttf");
+}
+
+/* Importing Migrate Styles */
+@import "../styles/migrated/--mdc-typography.scss";
+@import "../styles/migrated/--mdc-button.scss";
+@import "../styles/migrated/--mdc-radio-button.scss";
+@import "../styles/migrated/--mdc-icon-button.scss";
+@import "../styles/migrated/--mdc-card.scss";
+@import "../styles/migrated/--mdc-datepicker.scss";
+@import "../styles/migrated/--mdc-tab-header.scss";
+@import "../styles/migrated/--mdc-slide-toggle.scss";
+@import "../styles/migrated/--mdc-paginator.scss";
+@import "../styles/migrated/--mdc-dialog.scss";
+@import "../styles/migrated/--mdc-snackbar.scss";
+@import "../styles/migrated/--mdc-menu.scss";
+@import "../styles/migrated/--mdc-checkbox.scss";
+@import "../styles/migrated/--mdc-chip.scss";
+@import "../styles/migrated/--mdc-tooltip.scss";
+@import "../styles/migrated/--mdc-list.scss";
+
+* {
+  font-family: "SegoeUI", "KhmerOSBattambang";
+}
+
+body {
+  margin: 0px;
+}
+
+.scrollbar-track {
+  opacity: 0.7 !important;
+  background-color: #f3f6f9 !important;
+  border-radius: 10px;
+}
+.scrollbar-track:hover {
+  opacity: 1 !important;
+}
+.cropper-container {
+  width: 100% !important;
+}
+.spacer {
+  flex-grow: 1;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  // border: unset !important;
+  -webkit-box-shadow: inset 0 0 0 1000px white !important;
+  box-shadow: inset 0 0 0 1000px white !important;
+}
+
+.mb-2 {
+  // width >= 721
+  @media (min-width: 721px) {
+    margin-bottom: 0 !important;
+  }
+
+  // width <= 720
+  @media (max-width: 720px) {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+.mb-4 {
+  // width >= 721
+  @media (min-width: 721px) {
+    margin-bottom: 0 !important;
+  }
+
+  // width <= 720
+  @media (max-width: 720px) {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family: "SegoeUI", "KhmerOSBattambang" !important;
+  color: $main-text-color;
+}
+
+button {
+  font-family: "SegoeUI", "KhmerOSBattambang" !important;
+}
+
+// ngx-spinner div.ngx-spinner-overlay {
+//   background-color: rgba(0, 0, 0, 0.09) !important;
+// }
+
+.required-cmd {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  color: $form-control-color;
+
+  @media (max-width: $medium-pc) {
+    position: unset;
+    text-align: right;
+  }
+}
+
+.btn-spinner {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.mat-mdc-progress-spinner circle,
+.mat-mdc-progress-spinner circle {
+  stroke: $main-color !important;
+}
+
+.photo-box-loading {
+  background: #e9ecef;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.file_required {
+  color: $rejected;
+  margin-left: 0px;
+}
+
+// .date-text-disabled {
+//   background: #e9ecef;
+//   border: 1px solid #ced4da;
+//   color: #2d5b6b;
+//   width: 100%;
+//   margin-top: -40px !important;
+//   height: 42px;
+//   border-radius: 5px;
+//   padding: 11px 0 24px 9px;
+// }
+
+ngx-intl-tel-input > div {
+  width: 100%;
+}
+
+ngx-intl-tel-input > div > input {
+  border: unset !important;
+  outline: none;
+  padding-top: 5px !important;
+  color: #286c84 !important;
+  width: 100%;
+}
+
+ngx-intl-tel-input > div > div > div.dropdown-menu {
+  font-size: 14px;
+}
+
+ngx-intl-tel-input > div > div > div > div.search-container > input {
+  padding: 7px 10px;
+  outline: none;
+}
+
+.container {
+  padding: 30px 35px;
+  @media only screen and (max-width: 800px) {
+    padding: 16px;
+  }
+  box-shadow: unset !important;
+  max-width: unset !important;
+  .container {
+    //nested container
+    padding: 0;
+  }
+  mat-form-field {
+    font-family: "SegoeUI", "KhmerOSBattambang" !important;
+
+    label {
+      height: 20px !important;
+      padding: 2px !important;
+    }
+
+    mat-error {
+      padding: 5px;
+    }
+  }
+
+  .container-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    position: relative;
+
+    h3 {
+      display: block;
+      font-size: 1.45em;
+      font-weight: bold;
+      font-family: "SegoeUI", "KhmerOSBattambang" !important;
+      color: $main-color;
+
+      mat-icon {
+        vertical-align: text-top;
+        cursor: pointer;
+      }
+    }
+
+    h1 {
+      display: block;
+      font-size: 2em;
+      margin-top: 10px;
+      font-weight: bold;
+      font-family: "SegoeUI", "KhmerOSBattambang" !important;
+    }
+
+    .btn-container {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      // button,
+      // .mat-mdc-button-base {
+      //   font-family: "SegoeUI", "KhmerOSBattambang" !important;
+      //   // background: darken($color: $main-background-color, $amount: 5%);
+      //   color: white;
+      // }
+
+      // .no-color {
+      //   background: unset !important;
+      //   color: darken($color: $main-background-color, $amount: 5%);
+      //   padding-left: 8px;
+      //   padding-top: 2px;
+
+      //   mat-icon {
+      //     vertical-align: sub;
+      //   }
+      // }
+
+      // button {
+      //   &:nth-child(1),
+      //   &:nth-child(2),
+      //   &:nth-child(3),
+      //   &:nth-child(4) {
+      //     margin-left: 15px;
+      //   }
+      // }
+    }
+  }
+
+  .main-btn {
+    font-family: "SegoeUI", "KhmerOSBattambang" !important;
+    background: darken($color: $main-background-color, $amount: 5%);
+    color: white;
+  }
+
+  .table-options {
+    margin: 12px 0px 20px 0;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    table {
+      // th,
+      // td {
+      //     padding: 0 4px;
+      // }
+
+      th,
+      td {
+        &:first-child {
+          padding-left: 24px;
+        }
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    font-family: "SegoeUI", "KhmerOSBattambang" !important;
+
+    tr {
+      th {
+        background: white !important;
+        font-size: 14px !important;
+        font-weight: bold;
+        color: $list-color;
+      }
+      th,
+      td {
+        &.sticky-right,
+        &.sticky-left {
+          &.shadow {
+            &::before {
+              content: "";
+              display: block;
+              width: 8px;
+              top: 0;
+              position: absolute;
+              transition: opacity 250ms ease-out;
+              bottom: 0;
+            }
+            &.left::before {
+              left: -8px;
+              background: linear-gradient(
+                270deg,
+                rgba(0, 0, 0, 0.1),
+                transparent
+              );
+            }
+            &.right::before {
+              right: -8px;
+              background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.1),
+                transparent
+              );
+            }
+            &.hidden::before {
+              opacity: 0;
+            }
+          }
+          background-color: #fff;
+        }
+      }
+    }
+
+    thead {
+      tr {
+        background: none !important;
+        &:hover {
+          background: none !important;
+        }
+      }
+    }
+
+    td {
+      border: none !important;
+      color: $value;
+      line-height: 2;
+      /* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version.*/
+      .mat-mdc-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-bar {
+        background: lighten($color: $button-background-color, $amount: 10%);
+      }
+
+      .table-container {
+        box-shadow: unset;
+      }
+    }
+
+    .action-col {
+      width: 100px !important;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 25px 30px;
+  }
+
+  @media (max-width: 414px) {
+    padding: 20px 16px;
+  }
+}
+
+// .row {
+//   margin: 12px 0px;
+.row {
+  margin: 12px 0px;
+  width: 100%;
+
+  &.section {
+    width: 100% !important;
+    margin: 0 !important;
+
+    .row {
+      margin: 0 !important;
+    }
+  }
+
+  .form-control {
+    height: 43px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+  }
+
+  .col {
+    padding: 0px 21px;
+
+    .label {
+      color: $gray_label;
+      width: max-content;
+      font-size: 14px;
+      margin-right: 30px;
+      font-family: "SegoeUI", "KhmerOSBattambang" !important;
+    }
+
+    .value {
+      color: $value;
+      width: max-content;
+      font-size: 14px;
+      font-family: "SegoeUI", "KhmerOSBattambang" !important;
+    }
+  }
+
+  .col-12 {
+    padding: 0px 21px;
+
+    .label-1 {
+      color: $gray_label;
+      width: max-content;
+      font-size: 14px;
+      margin-right: 15px;
+      font-family: "SegoeUI", "KhmerOSBattambang" !important;
+    }
+
+    .value-1 {
+      color: $value;
+      width: max-content;
+      font-size: 14px;
+      margin-left: 15px;
+      font-family: "SegoeUI", "KhmerOSBattambang" !important;
+    }
+  }
+}
+
+.form-row {
+  margin-bottom: 20px;
+
+  .form-group {
+    margin-bottom: 0;
+
+    label {
+      // color: $gray_label;
+      color: #2b78a1;
+    }
+  }
+}
+
+.content-list {
+  position: relative;
+  .title {
+    margin-bottom: 15px;
+  }
+  h1.title {
+    font-size: 15px;
+    .index {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 30px;
+      width: 28px;
+      height: 28px;
+      background: #194c5d;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 1px 1px 0 #999;
+      display: inline-block;
+      margin-right: 10px;
+      font-family: "SegoeUI", "KhmerOSBattambang" !important;
+    }
+  }
+  h2.title {
+    font-size: 14px;
+    font-family: "SegoeUI", "KhmerOSBattambang" !important;
+    font-weight: unset;
+    color: $form-control-color;
+  }
+  h3.title {
+    font-size: 14px;
+    font-family: "SegoeUI", "KhmerOSBattambang" !important;
+  }
+  h4.title {
+    font-size: 14px;
+  }
+}
+
+.breadcrumb {
+  display: flex !important;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  .active {
+    text-decoration: underline;
+  }
+  a {
+    color: #2f3292;
+  }
+  mat-icon {
+    color: rgb(0 0 0 / 0.3);
+  }
+}
+
+.empty-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 22px;
+  font-size: 16px;
+  color: $main-color;
+
+  mat-icon {
+    width: 200px;
+    height: 200px;
+  }
+
+  .main-emp {
+    font-size: 18px;
+    margin: 10px 0;
+    color: black !important;
+    font-weight: bold !important;
+  }
+
+  .desc-emp {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #898989;
+    font-weight: normal;
+  }
+}
+
+div.section {
+  margin-bottom: 0px;
+
+  hr {
+    width: 95%;
+    background: #f3f6f9;
+    text-align: center;
+    border: none;
+    height: 1px;
+  }
+
+  div.section-header {
+    margin: 15px auto;
+    margin-bottom: 10px;
+
+    p {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: $header-color;
+      padding-bottom: 5px;
+
+      mat-icon {
+        vertical-align: middle;
+        margin-bottom: 6px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  div.row {
+    margin: 10px 0px;
+  }
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.panel-success {
+  font-family: "SegoeUI", "KhmerOSBattambang" !important;
+  background-color: $main-color !important;
+  color: white;
+  display: flex !important;
+  justify-content: center;
+}
+
+.panel-error {
+  font-family: "SegoeUI", "KhmerOSBattambang" !important;
+  background-color: $cancel !important;
+  color: white;
+  display: flex !important;
+  justify-content: center;
+}
+
+.panel {
+  box-shadow: $default-shadow;
+  border-radius: 0;
+  background-color: #fff;
+  padding: 1.25rem;
+  margin-bottom: 15px;
+
+  &.panel-pop-bottom {
+    border: 1px solid $pannel-pop-border-color;
+    position: relative;
+    border-radius: 3px;
+    margin-top: 15px;
+    &::before {
+      content: "";
+      position: absolute;
+      border-style: solid;
+      border-color: transparent;
+      top: 0;
+      left: 0;
+      margin-top: -10px;
+      border-width: 0 10px 10px 10px;
+      border-bottom-color: $pannel-pop-border-color;
+    }
+  }
+
+  &.panel-pop-bottom-no-arrow {
+    border: 1px solid $pannel-pop-border-color;
+    position: relative;
+    border-radius: 3px;
+    margin-top: 15px;
+  }
+
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    .title {
+      margin: 0;
+      padding: 4px;
+    }
+  }
+}
+
+.mat-sidenav-content {
+  overflow-y: scroll;
+}
+
+div.face-container-mini {
+  position: relative;
+  display: flex;
+  margin: 40px 0px;
+
+  .profile-mini {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 2px $main-color;
+
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 4px $main-color;
+    }
+  }
+
+  .id-card-mini {
+    width: 170px;
+    max-height: 100px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px $main-color;
+
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 4px $main-color;
+    }
+  }
+
+  button {
+    display: block;
+    margin: 0px auto;
+  }
+}
+
+div.face-container {
+  position: relative;
+  margin: 25px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  // OLD
+
+  .spacer {
+    min-width: 10px;
+  }
+
+  div.profile {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 2px $main-color;
+    // OLD
+    // max-height: 130px;
+    // height: max-content;
+    // img {
+    //     width: 100%;
+    // }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 4px $main-color;
+    }
+  }
+  div.id-card {
+    width: 250px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px $main-color;
+    // OLD
+    // max-height: 130px;
+    // img {
+    //     width: 100%;
+    // }
+  }
+  position: relative;
+  display: flex;
+  margin: 25px 0px;
+  align-items: center;
+  justify-content: center;
+
+  .spacer {
+    min-width: 10px;
+  }
+
+  div.profile {
+    width: 130px;
+    height: max-content;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 2px $main-color;
+    max-height: 130px;
+
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 4px $main-color;
+    }
+  }
+
+  div.id-card {
+    width: 250px;
+    max-height: 130px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px $main-color;
+
+    img {
+      width: 100%;
+    }
+
+    div.id-card,
+    div.profile {
+      margin: 8px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 4px $main-color;
+    }
+  }
+
+  button {
+    display: block;
+    margin: 0px auto;
+  }
+}
+
+div.dialog {
+  padding: 0px;
+
+  div.table-container {
+    div.profile {
+      width: 60px;
+      height: 60px;
+      margin: 10px 0px;
+
+      &:hover {
+        cursor: default;
+        box-shadow: 0px 0px 3px $main-color;
+      }
+    }
+  }
+}
+
+form {
+  margin-top: 15px;
+}
+.box-gap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.between-cont {
+  display: flex;
+  justify-content: space-between;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.member-detail {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  padding: 0px;
+  & > div {
+    display: flex;
+    align-self: center;
+  }
+}
+
+.date-picker {
+  &[readonly] {
+    background-color: #fff;
+  }
+  &:disabled {
+    background-color: #e9ecef;
+  }
+}
+
+.iti {
+  .form-control {
+    height: 43px;
+    font-size: 14px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #b8c5d5 !important;
+  }
+}
+
+.mat-mdc-table {
+  th.mat-mdc-header-cell {
+    background: white !important;
+  }
+}
+
+/*Input auto autocomplete background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 0 #f9f9f9 inset !important;
+  box-shadow: 0 0 0 0 #f9f9f9 inset !important;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-size: 15px;
+}
+
+.mat-mdc-snack-bar-container {
+  border-radius: 8px !important;
+}
+
+.noscroll-x {
+  > .scrollbar-track-x {
+    display: none !important;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+  /* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version.*/
+  /* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version.*/
+  .mat-radio-label {
+    align-items: flex-start !important;
+    /* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version.*/
+    .mat-radio-label-content {
+      width: 100% !important;
+    }
+  }
+}
+
+.reset-radio-group {
+  gap: 16px;
+  flex-wrap: wrap;
+  /* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version.*/
+  .mat-radio-label {
+    margin-bottom: 0 !important;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.required {
+  &::after {
+    content: " *";
+    color: $cancel;
+  }
+}
+ul {
+  &.list-item {
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+.status-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-view {
+  height: 260px;
+  overflow-x: hidden;
+}
+
+.scroll-item {
+  height: 50px;
+}
+.select-large-list {
+  .dropdown .dropdown-menu label {
+    padding: 0.5rem 1rem !important;
+  }
+}
+// button {
+.back-button.mat-primary-light.mat-mdc-unelevated-button {
+  padding: 6px !important;
+  background-color: rgb(42 82 152 / 10%) !important;
+  line-height: 1;
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
+  .mat-button-wrapper {
+    justify-content: center;
+    mat-icon {
+      color: rgb(42, 82, 152);
+      margin: 0;
+    }
+  }
+  // }
+}
+
+.tel-inp-dropup {
+  .dropdown-menu.country-dropdown.show {
+    transform: translateY(calc(-100% - 50px)) !important;
+  }
+}
+a {
+  &.mat-mdc-button-base {
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  &.mat-mdc-icon-button {
+    width: 30px;
+    height: 30px;
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
+    .mat-button-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      mat-icon {
+        line-height: 1;
+        width: 18px;
+        height: 18px;
+        font-size: 18px !important;
+        margin: 0;
+      }
+    }
+  }
+}
+.note {
+  color: $main-color;
+}
+.z-100 {
+  z-index: 100;
+}
+.invisible {
+  visibility: hidden;
+}
+hr {
+  background-color: #f3f6f9;
+  border: 1px solid #f3f6f9;
+}
+.bg-white {
+  background-color: #fff;
+}
+.text-nowrap {
+  white-space: nowrap !important;
+}
+.text-wrap {
+  white-space: wrap !important;
+}
+.border {
+  border: 1px solid #00306747;
+}
+.text-right {
+  text-align: end !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: start;
+}
+.text-white {
+  color: #fff !important;
+}
+
+.fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  margin: 0;
+}
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
+.mat-button-reset {
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
+  .mat-button-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+fieldset {
+  &.unreset {
+    border: 1px solid rgb(184 197 213);
+    border-radius: 12px;
+    // padding: 0.6rem 1.5rem 1rem;
+    // padding: 0.85rem 1.5rem 0.85rem;
+    padding: 4px 6px;
+    &.no-legend {
+      padding-top: 1rem;
+    }
+    legend {
+      font-size: 14px;
+      padding-left: 8px;
+      padding-right: 8px;
+      margin-bottom: 0;
+      width: auto;
+    }
+  }
+
+  &.detail {
+    legend {
+      margin-left: -8px;
+    }
+
+    .description {
+      margin-top: -20px;
+    }
+
+    .grid-data {
+      .label {
+        min-width: fit-content !important;
+      }
+    }
+  }
+}
+
+.upload-file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .label-container {
+    .doc-label {
+      font-size: 14px !important;
+      font-weight: normal !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 0 !important;
+
+      mat-icon {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+.checkbox-holder {
+  display: flex;
+  align-items: center;
+  padding-top: 22px;
+}
+
+.doc-label {
+  display: flex;
+  align-items: center;
+
+  mat-icon {
+    margin-right: 12px;
+  }
+}
+
+.p-icon {
+  display: flex;
+  align-items: center;
+}
+
+.grid-data {
+  display: flex;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+
+  .label {
+    min-width: 140px;
+    padding-right: 16px;
+    white-space: nowrap;
+    color: #000;
+    margin-bottom: 0;
+  }
+  .value {
+    color: #2a5298;
+    flex: 1;
+    padding-right: 1rem;
+
+    &.empty {
+      color: #a1a1aa;
+    }
+
+    // &::before {
+    //   content: "៖";
+    //   margin-right: 4px;
+    // }
+  }
+  &.md {
+    .label {
+      min-width: 96px;
+    }
+  }
+  &.xl {
+    .label {
+      min-width: 184px;
+    }
+  }
+}
+
+.set-gab {
+  gap: 40px;
+}
+.t-container {
+  background: white;
+  width: 100%;
+  padding: 20px 32px;
+  border-radius: 8px;
+  position: relative;
+  height: fit-content;
+  min-height: 125px;
+}
+
+.row textarea.form-control {
+  height: auto;
+}
+
+.pag-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search-list {
+  @extend .empty-list;
+  padding-top: 50px;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.reject-button {
+  .red-icon {
+    color: red !important;
+  }
+
+  .red-text {
+    color: red !important;
+  }
+}

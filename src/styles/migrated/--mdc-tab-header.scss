@@ -1,0 +1,96 @@
+// html {
+//   --mdc-tab-indicator-active-indicator-height: 2px;
+//   --mdc-tab-indicator-active-indicator-shape: 0;
+//   --mdc-secondary-navigation-tab-container-height: 48px;
+//   --mat-tab-header-divider-color: transparent;
+//   --mat-tab-header-divider-height: 0
+// }
+
+// .mat-mdc-tab-group,
+// .mat-mdc-tab-nav-bar {
+//   --mdc-tab-indicator-active-indicator-color: #3f51b5;
+//   --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);
+//   --mat-tab-header-pagination-icon-color: black;
+//   --mat-tab-header-inactive-label-text-color: rgba(0, 0, 0, 0.6);
+//   --mat-tab-header-active-label-text-color: #3f51b5;
+//   --mat-tab-header-active-ripple-color: #3f51b5;
+//   --mat-tab-header-inactive-ripple-color: #3f51b5;
+//   --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
+//   --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
+//   --mat-tab-header-active-focus-label-text-color: #3f51b5;
+//   --mat-tab-header-active-hover-label-text-color: #3f51b5;
+//   --mat-tab-header-active-focus-indicator-color: #3f51b5;
+//   --mat-tab-header-active-hover-indicator-color: #3f51b5
+// }
+
+// .mat-mdc-tab-group.mat-accent,
+// .mat-mdc-tab-nav-bar.mat-accent {
+//   --mdc-tab-indicator-active-indicator-color: #ff4081;
+//   --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);
+//   --mat-tab-header-pagination-icon-color: black;
+//   --mat-tab-header-inactive-label-text-color: rgba(0, 0, 0, 0.6);
+//   --mat-tab-header-active-label-text-color: #ff4081;
+//   --mat-tab-header-active-ripple-color: #ff4081;
+//   --mat-tab-header-inactive-ripple-color: #ff4081;
+//   --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
+//   --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
+//   --mat-tab-header-active-focus-label-text-color: #ff4081;
+//   --mat-tab-header-active-hover-label-text-color: #ff4081;
+//   --mat-tab-header-active-focus-indicator-color: #ff4081;
+//   --mat-tab-header-active-hover-indicator-color: #ff4081
+// }
+
+// .mat-mdc-tab-group.mat-warn,
+// .mat-mdc-tab-nav-bar.mat-warn {
+//   --mdc-tab-indicator-active-indicator-color: #f44336;
+//   --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);
+//   --mat-tab-header-pagination-icon-color: black;
+//   --mat-tab-header-inactive-label-text-color: rgba(0, 0, 0, 0.6);
+//   --mat-tab-header-active-label-text-color: #f44336;
+//   --mat-tab-header-active-ripple-color: #f44336;
+//   --mat-tab-header-inactive-ripple-color: #f44336;
+//   --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
+//   --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
+//   --mat-tab-header-active-focus-label-text-color: #f44336;
+//   --mat-tab-header-active-hover-label-text-color: #f44336;
+//   --mat-tab-header-active-focus-indicator-color: #f44336;
+//   --mat-tab-header-active-hover-indicator-color: #f44336
+// }
+
+// .mat-mdc-tab-group.mat-background-primary,
+// .mat-mdc-tab-nav-bar.mat-background-primary {
+//   --mat-tab-header-with-background-background-color: #3f51b5;
+//   --mat-tab-header-with-background-foreground-color: white
+// }
+
+// .mat-mdc-tab-group.mat-background-accent,
+// .mat-mdc-tab-nav-bar.mat-background-accent {
+//   --mat-tab-header-with-background-background-color: #ff4081;
+//   --mat-tab-header-with-background-foreground-color: white
+// }
+
+// .mat-mdc-tab-group.mat-background-warn,
+// .mat-mdc-tab-nav-bar.mat-background-warn {
+//   --mat-tab-header-with-background-background-color: #f44336;
+//   --mat-tab-header-with-background-foreground-color: white
+// }
+
+// .mat-mdc-tab-header {
+//   --mdc-secondary-navigation-tab-container-height: 48px
+// }
+
+.mat-mdc-tab-header {
+  // --mat-tab-header-label-text-font: Roboto, sans-serif;
+  --mat-tab-header-label-text-size: 16px;
+  --mat-tab-header-label-text-tracking: normal;
+  --mat-tab-header-label-text-line-height: 36px;
+  --mat-tab-header-label-text-weight: normal;
+}
+
+.mdc-tab {
+  min-width: 160px !important;
+}
+
+.tab-icon {
+  margin-right: 8px;
+}

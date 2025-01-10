@@ -1,0 +1,73 @@
+// html {
+//   --mdc-radio-disabled-selected-icon-opacity: 0.38;
+//   --mdc-radio-disabled-unselected-icon-opacity: 0.38;
+//   --mdc-radio-state-layer-size: 40px
+// }
+
+// .mat-mdc-radio-button {
+//   --mdc-form-field-label-text-color: rgba(0, 0, 0, 0.87)
+// }
+
+.mat-mdc-radio-button.mat-primary {
+  // --mdc-radio-disabled-selected-icon-color: black;
+  // --mdc-radio-disabled-unselected-icon-color: black;
+  // --mdc-radio-unselected-hover-icon-color: #212121;
+  // --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
+  // --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+  // --mdc-radio-selected-focus-icon-color: #3f51b5;
+  // --mdc-radio-selected-hover-icon-color: #3f51b5;
+  // --mdc-radio-selected-icon-color: #3f51b5;
+  // --mdc-radio-selected-pressed-icon-color: #3f51b5;
+  // --mat-radio-ripple-color: black;
+  // --mat-radio-checked-ripple-color: #3f51b5;
+  // --mat-radio-disabled-label-color: rgba(0, 0, 0, 0.38)
+
+  .mdc-form-field.mat-internal-form-field {
+    .mdc-label {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+// .mat-mdc-radio-button.mat-accent {
+//   --mdc-radio-disabled-selected-icon-color: black;
+//   --mdc-radio-disabled-unselected-icon-color: black;
+//   --mdc-radio-unselected-hover-icon-color: #212121;
+//   --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
+//   --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+//   --mdc-radio-selected-focus-icon-color: #ff4081;
+//   --mdc-radio-selected-hover-icon-color: #ff4081;
+//   --mdc-radio-selected-icon-color: #ff4081;
+//   --mdc-radio-selected-pressed-icon-color: #ff4081;
+//   --mat-radio-ripple-color: black;
+//   --mat-radio-checked-ripple-color: #ff4081;
+//   --mat-radio-disabled-label-color: rgba(0, 0, 0, 0.38)
+// }
+
+// .mat-mdc-radio-button.mat-warn {
+//   --mdc-radio-disabled-selected-icon-color: black;
+//   --mdc-radio-disabled-unselected-icon-color: black;
+//   --mdc-radio-unselected-hover-icon-color: #212121;
+//   --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
+//   --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+//   --mdc-radio-selected-focus-icon-color: #f44336;
+//   --mdc-radio-selected-hover-icon-color: #f44336;
+//   --mdc-radio-selected-icon-color: #f44336;
+//   --mdc-radio-selected-pressed-icon-color: #f44336;
+//   --mat-radio-ripple-color: black;
+//   --mat-radio-checked-ripple-color: #f44336;
+//   --mat-radio-disabled-label-color: rgba(0, 0, 0, 0.38)
+// }
+
+// html {
+//   --mdc-radio-state-layer-size: 40px;
+//   --mat-radio-touch-target-display: block
+// }
+
+.mat-mdc-radio-button {
+  --mdc-form-field-label-text-font: "SegoeUI", "KhmerOSBattambang";
+  // --mdc-form-field-label-text-line-height: 20px;
+  // --mdc-form-field-label-text-size: 14px;
+  --mdc-form-field-label-text-tracking: normal;
+  // --mdc-form-field-label-text-weight: 400
+}

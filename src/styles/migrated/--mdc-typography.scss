@@ -1,0 +1,138 @@
+.mat-h1,
+.mat-headline-5,
+.mat-typography .mat-h1,
+.mat-typography .mat-headline-5,
+.mat-typography h1 {
+  mat-icon {
+    overflow: visible !important;
+  }
+
+  font: 400 24px/32px "SegoeUI", "KhmerOSBattambang";
+  letter-spacing: normal;
+  margin: 0 0 12px;
+}
+
+.mat-h2,
+.mat-headline-6,
+.mat-typography .mat-h2,
+.mat-typography .mat-headline-6,
+.mat-typography h2 {
+  mat-icon {
+    overflow: visible !important;
+  }
+
+  font: 500 20px/32px "SegoeUI", "KhmerOSBattambang";
+  letter-spacing: normal;
+  margin: 0 0 12px;
+}
+
+.mat-h3,
+.mat-subtitle-1,
+.mat-typography .mat-h3,
+.mat-typography .mat-subtitle-1,
+.mat-typography h3 {
+  mat-icon {
+    overflow: visible !important;
+  }
+
+  font: 400 16px/28px "SegoeUI", "KhmerOSBattambang";
+  letter-spacing: normal;
+  margin: 0 0 12px;
+}
+
+.mat-h4,
+.mat-body-2,
+.mat-typography .mat-h4,
+.mat-typography .mat-body-1,
+.mat-typography h4 {
+  mat-icon {
+    overflow: visible !important;
+  }
+
+  font: 400 16px/24px "SegoeUI", "KhmerOSBattambang";
+  letter-spacing: normal;
+  margin: 0 0 12px;
+}
+
+.mat-h5,
+.mat-typography .mat-h5,
+.mat-typography h5 {
+  mat-icon {
+    overflow: visible !important;
+  }
+
+  font: 400 calc(14px*.83)/20px "SegoeUI", "KhmerOSBattambang";
+  margin: 0 0 12px;
+}
+
+.mat-h6,
+.mat-typography .mat-h6,
+.mat-typography h6 {
+  mat-icon {
+    overflow: visible !important;
+  }
+
+  font: 400 calc(14px*.67)/20px "SegoeUI", "KhmerOSBattambang";
+  margin: 0 0 12px;
+}
+
+.mat-body-strong,
+.mat-subtitle-2,
+.mat-typography .mat-body-strong,
+.mat-typography .mat-subtitle-2 {
+  font: 500 14px/22px "SegoeUI", "KhmerOSBattambang";
+  letter-spacing: normal;
+}
+
+.mat-body,
+.mat-subtitle-2,
+.mat-typography .mat-body,
+.mat-typography .mat-body-2,
+.mat-typography {
+  font: 400 14px/20px "SegoeUI", "KhmerOSBattambang";
+  letter-spacing: normal;
+}
+
+.mat-body p,
+.mat-subtitle-2 p,
+.mat-typography .mat-body p,
+.mat-typography .mat-body-2 p,
+.mat-typography p {
+  margin: 0 0 12px;
+}
+
+.mat-small,
+.mat-caption,
+.mat-typography .mat-small,
+.mat-typography .mat-caption {
+  font: 400 12px/20px "SegoeUI", "KhmerOSBattambang";
+  letter-spacing: normal;
+}
+
+.mat-headline-1,
+.mat-typography .mat-headline-1 {
+  font: 300 96px/96px "SegoeUI", "KhmerOSBattambang";
+  letter-spacing: normal;
+  margin: 0 0 56px
+}
+
+.mat-headline-2,
+.mat-typography .mat-headline-2 {
+  font: 300 60px/60px "SegoeUI", "KhmerOSBattambang";
+  letter-spacing: normal;
+  margin: 0 0 64px
+}
+
+.mat-headline-3,
+.mat-typography .mat-headline-3 {
+  font: 400 48px/50px "SegoeUI", "KhmerOSBattambang";
+  letter-spacing: normal;
+  margin: 0 0 64px
+}
+
+.mat-headline-4,
+.mat-typography .mat-headline-4 {
+  font: 400 34px/40px "SegoeUI", "KhmerOSBattambang";
+  letter-spacing: normal;
+  margin: 0 0 64px
+}

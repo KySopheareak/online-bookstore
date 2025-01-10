@@ -1,0 +1,121 @@
+@import "../styles/updated/m_variable.scss";
+
+.main-list {
+    width: 100%;
+    max-width: unset;
+    counter-reset: my-awesome-counter;
+    padding-left: 40px;
+    list-style: none;
+    margin: 10px 0px;
+}
+
+.main-list .list {
+    width: 100%;
+    color: black;
+    margin: 0 0 0.5rem 0;
+    counter-increment: my-awesome-counter;
+    position: relative;
+    font-size: 15px;
+}
+
+.main-list .list::before {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    --size: 30px;
+    left: calc(-1 * var(--size) - 10px);
+    line-height: var(--size);
+    width: var(--size);
+    height: var(--size);
+    top: -3px;
+    background: #194c5d;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 1px 1px 0 #999;
+    margin-bottom: 20px;
+}
+
+.download-list > li {
+    width: fit-content;
+    position: relative;
+}
+
+.sub-list {
+    width: 100%;
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 15px 0px;
+    color: black;
+
+    li {
+        font-size: 14px;
+        margin-bottom: 1rem;
+
+        .section-title {
+            font-weight: bold;
+        }
+
+        .doc-title {
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+
+        .icon {
+            float: left;
+        }
+
+        .value {
+            color: black;
+            width: max-content;
+            font-size: 14px;
+            font-family: "SegoeUI", "KhmerOSBattambang" !important;
+        }
+
+        .check-text {
+            margin-left: 33px;
+            width: 95% !important;
+            color: $main-color !important;
+            font-weight: normal;
+        }
+
+        .file-icon {
+            vertical-align: middle;
+            color: $main-color;
+            margin-right: 0px;
+            margin-top: -2px;
+            float: left;
+        }
+
+        .doc-error {
+            background: #fd3636bd;
+            color: white;
+            font-size: 12px;
+            border-radius: 12px;
+            padding: 2px;
+            margin-left: 12px;
+            height: 16px;
+            width: 16px;
+        }
+
+        .display-doc {
+            margin-bottom: 20px;
+        }
+
+        .auto-left {
+            display: flex;
+            align-items: center;
+
+            button,
+            .submit-btn {
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+.sub-list .child-list {
+    padding-left: 21px;
+}

@@ -1,0 +1,37 @@
+// html {
+//   --mat-menu-container-shape: 4px;
+//   --mat-menu-divider-bottom-spacing: 0;
+//   --mat-menu-divider-top-spacing: 0;
+//   --mat-menu-item-spacing: 16px;
+//   --mat-menu-item-icon-size: 24px;
+//   --mat-menu-item-leading-spacing: 16px;
+//   --mat-menu-item-trailing-spacing: 16px;
+//   --mat-menu-item-with-icon-leading-spacing: 16px;
+//   --mat-menu-item-with-icon-trailing-spacing: 16px
+// }
+
+// html {
+//   --mat-menu-item-label-text-color: rgba(0, 0, 0, 0.87);
+//   --mat-menu-item-icon-color: rgba(0, 0, 0, 0.87);
+//   --mat-menu-item-hover-state-layer-color: rgba(0, 0, 0, 0.04);
+//   --mat-menu-item-focus-state-layer-color: rgba(0, 0, 0, 0.04);
+//   --mat-menu-container-color: white;
+//   --mat-menu-divider-color: rgba(0, 0, 0, 0.12)
+// }
+
+html {
+  --mat-menu-item-label-text-font: "SegoeUI", "KhmerOSBattambang";
+  --mat-menu-item-label-text-size: 14px;
+  --mat-menu-item-label-text-tracking: normal;
+  --mat-menu-item-label-text-line-height: 24px;
+  --mat-menu-item-label-text-weight: 400
+}
+
+// .mat-mdc-menu-item {
+//   font-family: "SegoeUI", "KhmerOSBattambang";
+//   // --mat-menu-item-label-text-font: Roboto, sans-serif;
+
+//   .mdc-list-item__primary-text {
+//       font-size: 14px !important;
+//   }
+// }
