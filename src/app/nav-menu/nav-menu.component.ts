@@ -10,6 +10,13 @@ import { CommonModule } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+
 
 @Component({
   selector: 'app-nav-menu',
@@ -33,7 +40,12 @@ import { MatIconModule } from '@angular/material/icon';
     MatListModule,
     MatTooltipModule,
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    MatTreeModule,
+    MatCardModule,
+    MatDividerModule,
+    MatToolbarModule
   ]
 })
 export class NavMenuComponent implements OnInit, AfterViewInit, OnChanges {
@@ -60,17 +72,17 @@ export class NavMenuComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // if (changes.isMenuIcon && changes.isMenuIcon.currentValue) {
-    //   this.cd.reattach();
-    // } else {
-    //   this.cd.detach();
-    // }
-    // if (changes.menu) {
-    //   this.cd.detectChanges();
-    // }
-    // if (changes.isMenuIcon || changes.isTablet || changes.isHandset) {
-    //   this.cd.detectChanges();
-    // }
+    if (changes['isMenuIcon'].currentValue) {
+      this.cd.reattach();
+    } else {
+      this.cd.detach();
+    }
+    if (changes['menu']) {
+      this.cd.detectChanges();
+    }
+    if (changes['isMenuIcon'] || changes['isTablet'] || changes['isHandset']) {
+      this.cd.detectChanges();
+    }
   }
 
   onClickMenu(): void {

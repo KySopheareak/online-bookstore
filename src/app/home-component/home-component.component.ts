@@ -83,7 +83,6 @@ export class HomeComponentComponent {
     this.lang = this.translate.currentLang as LANG;
 
     let value: any = this.localStorageService.decryptSpecialCharacter(LocalStorageEnum.user);
-    console.log('VALUE: ', value)
     if(value){
       this.user = JSON.parse(value ? value : '');
     }
@@ -120,27 +119,21 @@ export class HomeComponentComponent {
       this.title = title;
     });
 
-    this.breakpointObserver
-      .observe(Breakpoints.Handset)
-      .pipe(takeUntil(this._destroyed))
-      .subscribe((response) => {
-        this.isHandset = response.matches;
-        this.isMenuIcon = response.matches;
-      });
+    this.breakpointObserver.observe(Breakpoints.Handset).pipe(takeUntil(this._destroyed)).subscribe((response) => {
+      this.isHandset = true;
+      // this.isHandset = response.matches;
+      this.isMenuIcon = true;
+      // this.isMenuIcon = response.matches;
+    });
 
-    this.breakpointObserver
-      .observe(Breakpoints.TabletPortrait)
-      .pipe(takeUntil(this._destroyed))
-      .subscribe((response) => {
-        this.isTablet = response.matches;
-        this.isMenuIcon = response.matches;
-      });
+    this.breakpointObserver.observe(Breakpoints.TabletPortrait).pipe(takeUntil(this._destroyed)).subscribe((response) => {
+      this.isTablet = response.matches;
+      this.isMenuIcon = response.matches;
+    });
 
-    this.translate.onLangChange
-      .pipe(takeUntil(this._destroyed))
-      .subscribe((event: LangChangeEvent) => {
-        this.lang = event.lang as LANG;
-      });
+    this.translate.onLangChange.pipe(takeUntil(this._destroyed)).subscribe((event: LangChangeEvent) => {
+      this.lang = event.lang as LANG;
+    });
   }
 
   private traverseMenuItems(menuItems: MenuItem[]) {
@@ -155,6 +148,8 @@ export class HomeComponentComponent {
   getMenuItems() {
     const menuItems = this.navigationService.getMenuItems(this.permissions);
     this.displayMenuItems = this.traverseMenuItems(menuItems);
+    console.log('MENU: ', menuItems)
+
   }
 
   onToggleMenu(): void {
