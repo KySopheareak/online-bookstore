@@ -38,8 +38,8 @@ h1 {
     width: 350px;
     min-width: 350px;
     transition: 250ms ease-out;
-    // background-image: url("/assets/images/sidenav-background.svg");
-    // background-size: cover;
+    background-image: url("/assets/images/sidenav-background.svg");
+    background-size: cover;
     background: linear-gradient(176.12deg, #0F0C29 0%, #302B63 51.29%, #24243E 100%);
 
     color: #FFFFFF !important;
@@ -148,6 +148,10 @@ h1 {
     }
 
     .brand-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       max-height: 242px;
       transition: max-height 350ms ease-out;
       padding: 20px 0;
@@ -267,8 +271,8 @@ h1 {
 }
 
 .logo {
-  --logo-size: 118px;
-  --bg-logo-size: calc(var(--logo-size) + 12px);
+  --logo-size: 120px;
+  --bg-logo-size: calc(var(--logo-size) + 35px);
 
   width: calc(var(--logo-size));
   height: calc(var(--logo-size));
@@ -284,7 +288,7 @@ h1 {
 
   &::before {
     content: ' ';
-    // background-image: url(../../../../assets/images/Logo_NSSF-192.webp);
+    background-image: url(../../assets/logo.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

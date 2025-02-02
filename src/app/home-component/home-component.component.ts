@@ -1,11 +1,9 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import {MatIconModule} from '@angular/material/icon';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MenuItem } from '../../models/core/menu-item';
 import { LocalStorageEnum } from '../../models/enums/local-storage.enum';
 import { Subject, takeUntil } from 'rxjs';
-import { LangChangeEvent, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LocalStorageService } from '../../service/local-storage.service';
 import { LANG } from '../../models/core/lang.enum';
 import SmoothScrollbar from "smooth-scrollbar";
@@ -25,6 +23,9 @@ import { UserImageComponent } from '../share/user-image/user-image.component';
 import { NavMenuComponent } from '../nav-menu/nav-menu.component';
 import { EmpFullNamePipe } from "../share/pipe/emp-full-name.pipe";
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { LangChangeEvent, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { PipeModule } from '../share/pipe/pipe.module';
 
 @Component({
   selector: 'app-home-component',
@@ -33,7 +34,6 @@ import { MatButtonModule } from '@angular/material/button';
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
-    MatIconModule,
     MatDividerModule,
     MatListModule,
     MatTooltipModule,
@@ -42,10 +42,11 @@ import { MatButtonModule } from '@angular/material/button';
     SmoothScrollbarComponent,
     UserImageComponent,
     NavMenuComponent,
-    TranslateModule,
     EmpFullNamePipe,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    TranslateModule,
+    PipeModule
 ],
   templateUrl: './home-component.component.html',
   styleUrl: './home-component.component.scss',
@@ -56,7 +57,6 @@ export class HomeComponentComponent {
 
   isContentScrolled!: boolean;
   scrollToTop: boolean = false;
-
   displayMenuItems: MenuItem[] = [];
 
   isScrolled!: boolean;
@@ -81,6 +81,7 @@ export class HomeComponentComponent {
     private _router: Router,
   ) {
     this.lang = this.translate.currentLang as LANG;
+    console.log('=====> LANG: ', this.lang)
 
     let value: any = this.localStorageService.decryptSpecialCharacter(LocalStorageEnum.user);
     if(value){
@@ -90,6 +91,8 @@ export class HomeComponentComponent {
     this.util.showActionButton.pipe(takeUntil(this._destroyed)).subscribe((res) => {
       this.showActionButton = !!res;
     });
+    console.log('===> showActionButton: ', this.showActionButton);
+    
 
     this.permissions = localStorageService.getArray(LocalStorageEnum.permissions);
     
@@ -120,10 +123,10 @@ export class HomeComponentComponent {
     });
 
     this.breakpointObserver.observe(Breakpoints.Handset).pipe(takeUntil(this._destroyed)).subscribe((response) => {
-      this.isHandset = true;
-      // this.isHandset = response.matches;
-      this.isMenuIcon = true;
-      // this.isMenuIcon = response.matches;
+      // this.isHandset = true;
+      this.isHandset = response.matches;
+      // this.isMenuIcon = true;
+      this.isMenuIcon = response.matches;
     });
 
     this.breakpointObserver.observe(Breakpoints.TabletPortrait).pipe(takeUntil(this._destroyed)).subscribe((response) => {

@@ -5,7 +5,7 @@ import { delay } from 'rxjs/operators';
 import SmoothScrollbar from 'smooth-scrollbar';
 import { ScrollStatus } from 'smooth-scrollbar/interfaces';
 import { MenuItem } from '../../models/core/menu-item';
-import { MatListModule } from '@angular/material/list';
+import { MatListModule, MatNavList } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
@@ -45,7 +45,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatTreeModule,
     MatCardModule,
     MatDividerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatNavList
   ]
 })
 export class NavMenuComponent implements OnInit, AfterViewInit, OnChanges {

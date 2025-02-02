@@ -3,7 +3,7 @@
     <div (click)="onCloseMenu()" role="button" class="menu-close"
       [ngClass]="{ open: !isMenuIcon && (isHandset || isTablet) }"></div>
     <div id="menu" [ngClass]="{'close-menu': isMenuIcon, handset: isHandset || isTablet, 'open-menu': !isMenuIcon}">
-      <div [ngClass]="{ shadow: isScrolled }" class="brand-wrapper d-flex flex-column align-items-center justify-content-center">
+      <div [ngClass]="{ shadow: isScrolled }" class="brand-wrapper">
         <div class="logo" [class.small-logo]="isMenuIcon"></div>
         <h1 [ngClass]="{'close-menu': isMenuIcon }">{{ "title" | translate }}</h1>
       </div>
@@ -35,7 +35,7 @@
         <div class="d-flex">
           <button type="button" aria-label="Toggle sidenav" class="toggle-sidenav" mat-icon-button
             (click)="onToggleMenu()">
-            <mat-icon svgIcon="menu" aria-label="Side nav toggle icon"></mat-icon>
+            <mat-icon>menu</mat-icon>
           </button>
   
           <p class="sub-header mb-0 pl-1">

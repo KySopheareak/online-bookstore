@@ -173,7 +173,7 @@ export class UtilService {
    * @=====================================================
    */
   getLocaleIdValue() {
-    // return this.translate.currentLang == LANG.KM ? 'km_KH' : 'en_US';
+    return this.translate.currentLang == LANG.KM ? 'km_KH' : 'en_US';
   }
 
 
