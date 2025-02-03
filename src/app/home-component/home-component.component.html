@@ -1,4 +1,3 @@
-
 <div id="navigation">
     <div (click)="onCloseMenu()" role="button" class="menu-close"
       [ngClass]="{ open: !isMenuIcon && (isHandset || isTablet) }"></div>
@@ -65,7 +64,7 @@
             </button>
             <mat-menu #menu="matMenu">
               <button mat-menu-item [matMenuTriggerFor]="langMenu">
-                <img class="mat-icon flag" [src]="'/assets/icons/' + util.currentLang + '.webp'" />
+                <img class="mat-icon flag" [src]="'/icons/' + util.currentLang + '.webp'" />
                 <span>{{ "lang." + util.currentLang | translate }}</span>
               </button>
               <button mat-menu-item (click)="onLogout()">
@@ -75,7 +74,7 @@
             </mat-menu>
             <mat-menu #langMenu="matMenu">
               <button (click)="util.setDefaultLang(lang)" mat-menu-item *ngFor="let lang of util.availableLangs">
-                <img class="mat-icon flag" [src]="'/assets/icons/' + lang + '.webp'" [alt]="'flag ' + lang" />
+                <img class="mat-icon flag" [src]="'/icons/' + lang + '.webp'" [alt]="'flag ' + lang" />
                 {{ "lang." + lang | translate }}
               </button>
             </mat-menu>

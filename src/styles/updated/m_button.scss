@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: "KhmerOSBattambang";
-  src: url("../../assets/fonts/KhmerOSBattambang.ttf");
+  src: url("/fonts/KhmerOSBattambang.ttf");
 }
 
 @font-face {
   font-family: "SegoeUI";
-  src: url("../../assets/fonts/SegoeUI.ttf");
+  src: url("/fonts/SegoeUI.ttf");
 }
 
 /* BUTTON */
@@ -137,7 +137,7 @@ input.m-invalid {
 }
 
 .m-icon-button-delete {
-  background: url("../../assets/icons/delete_icon.svg") no-repeat !important;
+  background: url("/icons/delete_icon.svg") no-repeat !important;
   color: #ff3c3c !important;
   width: 30px !important;
   height: 30px !important;
@@ -169,7 +169,7 @@ input.m-invalid {
 
 /* INLINE ICON BUTTON */
 .reset-icon {
-  background: url("../../assets/icons/reset-icon.svg");
+  background: url("/icons/reset-icon.svg");
   background-repeat: no-repeat;
   height: 100%;
 }

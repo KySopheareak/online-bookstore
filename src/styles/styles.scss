@@ -31,17 +31,17 @@
 
 @font-face {
   font-family: "KhmerMuol";
-  src: url("./../assets/fonts/KhmerOSmuollight.ttf");
+  src: url("/fonts/KhmerOSmuollight.ttf");
 }
 
 @font-face {
   font-family: "KhmerOSBattambang";
-  src: url("./../assets/fonts/KhmerOSBattambang.ttf");
+  src: url("/fonts/KhmerOSBattambang.ttf");
 }
 
 @font-face {
   font-family: "SegoeUI";
-  src: url("./../assets/fonts/SegoeUI.ttf");
+  src: url("/fonts/SegoeUI.ttf");
 }
 
 /* Importing Migrate Styles */
@@ -62,12 +62,13 @@
 @import "../styles/migrated/--mdc-tooltip.scss";
 @import "../styles/migrated/--mdc-list.scss";
 
-* {
-  font-family: "SegoeUI", "KhmerOSBattambang";
-}
+// * {
+//   font-family: "SegoeUI", "KhmerOSBattambang";
+// }
 
 body {
   margin: 0px;
+  font-family: "SegoeUI", "KhmerOSBattambang";
 }
 
 .scrollbar-track {

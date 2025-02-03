@@ -38,7 +38,7 @@ h1 {
     width: 350px;
     min-width: 350px;
     transition: 250ms ease-out;
-    background-image: url("/assets/images/sidenav-background.svg");
+    // background-image: url("/image/sidenav-background.svg");
     background-size: cover;
     background: linear-gradient(176.12deg, #0F0C29 0%, #302B63 51.29%, #24243E 100%);
 
@@ -181,22 +181,24 @@ h1 {
   #main {
     height: calc(100% - 66px);
     overflow: auto;
-    background-color: #f3f6f9;
+    background-color: #f3f6f9 !important;
   }
 
   .app-toolbar {
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #fff !important;
     height: 64px;
     box-shadow: 0 2px 10px 0 rgb(0 0 0 / 7%);
     z-index: 100;
 
     .toggle-sidenav {
       mat-icon {
+        color: #2f3292 !important;
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 25px !important;
       }
     }
 
@@ -217,7 +219,8 @@ h1 {
 
     .sub-header {
       font-size: 16px;
-      color: $main-color;
+      // color: $main-color;
+      color: #2f3292 !important;
       text-shadow: 0.7px 0 0 currentColor;
       padding-top: 3px;
       margin-left: 12px;
@@ -265,8 +268,16 @@ h1 {
 }
 
 .user-card {
+  display: flex;
+  align-items: center;
   span.username {
+    color: #a3a3a3 !important;
+    font-weight: 500;
     font-size: 15px;
+  }
+  mat-icon {
+    color: #a3a3a3 !important;
+    font-weight: 500;
   }
 }
 
@@ -282,13 +293,13 @@ h1 {
   transition: all .2s;
 
   &.small-logo {
-    --logo-size: 68px;	
+    --logo-size: 68px;
     --bg-logo-size: calc(var(--logo-size) + 8px);
   }
 
   &::before {
     content: ' ';
-    background-image: url(../../assets/logo.png);
+    background-image: url(/logo.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

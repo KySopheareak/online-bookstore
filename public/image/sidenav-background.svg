@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="283" height="1080" viewBox="0 0 283 1080">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0" y1="-0.357" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#000428"/>
+      <stop offset="1" stop-color="#004e92"/>
+    </linearGradient>
+  </defs>
+  <rect width="283" height="1080" fill="url(#linear-gradient)"/>
+  <path d="M8,0l8,10L8,20,0,10Z" transform="matrix(0.883, 0.469, -0.469, 0.883, 25.631, 13.415)" fill="rgba(255,255,255,0.1)"/>
+  <path d="M8,0l8,10L8,20,0,10Z" transform="matrix(0.883, 0.469, -0.469, 0.883, 215.631, 47.415)" fill="rgba(255,255,255,0.1)"/>
+  <path d="M8,0l8,10L8,20,0,10Z" transform="matrix(0.883, 0.469, -0.469, 0.883, 13.873, 235.415)" fill="rgba(255,255,255,0.1)"/>
+  <path d="M8,0l8,10L8,20,0,10Z" transform="matrix(0.883, 0.469, -0.469, 0.883, 257.873, 432.415)" fill="rgba(255,255,255,0.1)"/>
+  <path d="M8,0l8,10L8,20,0,10Z" transform="matrix(0.883, 0.469, -0.469, 0.883, 265.631, 438.415)" fill="rgba(255,255,255,0.1)"/>
+  <path d="M8,0l8,10L8,20,0,10Z" transform="translate(20 616.701) rotate(-41)" fill="rgba(255,255,255,0.1)"/>
+  <path d="M8,0l8,10L8,20,0,10Z" transform="matrix(0.982, -0.191, 0.191, 0.982, 238.723, 753.71)" fill="rgba(255,255,255,0.1)"/>
+  <path d="M8,0l8,10L8,20,0,10Z" transform="matrix(0.982, -0.191, 0.191, 0.982, 10.239, 858.71)" fill="rgba(255,255,255,0.1)"/>
+</svg>

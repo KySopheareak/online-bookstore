@@ -137,7 +137,7 @@ export class UtilService {
     if (!this.availableLangs.includes(lang)) lang = LANG.KM;
     try {
       this.localStorage.set(LocalStorageEnum.lang, lang);
-      // this.translate.use(lang);
+      this.translate.use(lang);
       this.currentLang = lang;
       return 1;
     } catch (error) {

@@ -29,9 +29,9 @@ export class UserImageComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // if (changes.avatarId && changes.avatarId.currentValue) {
-    //   this.loadImage();
-    // }
+    if (changes[this.avatarId] && changes[this.avatarId].currentValue) {
+      this.loadImage();
+    }
   }
 
   loadImage(): void {
@@ -52,7 +52,7 @@ export class UserImageComponent implements OnInit, OnChanges {
 
   onError(): void {
     URL.revokeObjectURL(this.__url!);
-    this.__url = '../../../../assets/images/default_profile.png';
+    this.__url = '/images/default_profile.png';
     this.resource = this.domSanitizer.bypassSecurityTrustResourceUrl(this.__url);
   }
 }

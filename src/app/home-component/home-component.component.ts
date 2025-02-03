@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MenuItem } from '../../models/core/menu-item';
 import { LocalStorageEnum } from '../../models/enums/local-storage.enum';
 import { Subject, takeUntil } from 'rxjs';
@@ -26,10 +25,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { LangChangeEvent, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PipeModule } from '../share/pipe/pipe.module';
+import {BreakpointObserver, Breakpoints, LayoutModule} from '@angular/cdk/layout';
+
 
 @Component({
   selector: 'app-home-component',
   imports: [
+    LayoutModule,
     CommonModule,
     RouterOutlet,
     RouterLink,
@@ -62,7 +64,7 @@ export class HomeComponentComponent {
   isScrolled!: boolean;
   isMenuIcon: boolean = false;
   menuState: 'open' | 'close' = 'close';
-  user!: User;
+  user!: any;
   lang: string = '';
   permissions: string[] = [];
   title: HeaderTitle | null = null;
@@ -72,28 +74,36 @@ export class HomeComponentComponent {
   private _destroyed = new Subject<void>();
 
   constructor(
-    private breakpointObserver: BreakpointObserver,
-    private translate: TranslateService,
     public util: UtilService,
     private localStorageService: LocalStorageService,
     private navigationService: NavigationService,
+    private translate: TranslateService,
     private _cd: ChangeDetectorRef,
     private _router: Router,
+    private br: BreakpointObserver,
   ) {
     this.lang = this.translate.currentLang as LANG;
     console.log('=====> LANG: ', this.lang)
 
-    let value: any = this.localStorageService.decryptSpecialCharacter(LocalStorageEnum.user);
-    if(value){
-      this.user = JSON.parse(value ? value : '');
+    // let value: any = this.localStorageService.decryptSpecialCharacter(LocalStorageEnum.user);
+    // if(value){
+    //   this.user = JSON.parse(value ? value : '');
+    // }
+
+    this.user = {
+      avatar: "634f65b4df1f2f34214bd721",
+      last_name_kh:  "គី",
+      first_name_kh: "សុភារក្ស",
+      last_name_en: "Ky",
+      first_name_en: "Sopheareak",
+      localize: "KH"
+
     }
 
     this.util.showActionButton.pipe(takeUntil(this._destroyed)).subscribe((res) => {
       this.showActionButton = !!res;
     });
-    console.log('===> showActionButton: ', this.showActionButton);
     
-
     this.permissions = localStorageService.getArray(LocalStorageEnum.permissions);
     
     }
@@ -122,20 +132,21 @@ export class HomeComponentComponent {
       this.title = title;
     });
 
-    this.breakpointObserver.observe(Breakpoints.Handset).pipe(takeUntil(this._destroyed)).subscribe((response) => {
+    this.br.observe(Breakpoints.Handset).pipe(takeUntil(this._destroyed)).subscribe((response) => {
       // this.isHandset = true;
       this.isHandset = response.matches;
       // this.isMenuIcon = true;
       this.isMenuIcon = response.matches;
     });
-
-    this.breakpointObserver.observe(Breakpoints.TabletPortrait).pipe(takeUntil(this._destroyed)).subscribe((response) => {
+    
+    this.br.observe(Breakpoints.TabletPortrait).pipe(takeUntil(this._destroyed)).subscribe((response) => {
       this.isTablet = response.matches;
       this.isMenuIcon = response.matches;
     });
-
+    
     this.translate.onLangChange.pipe(takeUntil(this._destroyed)).subscribe((event: LangChangeEvent) => {
       this.lang = event.lang as LANG;
+      console.log('LANG: ', this.lang)
     });
   }
 
@@ -151,7 +162,6 @@ export class HomeComponentComponent {
   getMenuItems() {
     const menuItems = this.navigationService.getMenuItems(this.permissions);
     this.displayMenuItems = this.traverseMenuItems(menuItems);
-    console.log('MENU: ', menuItems)
 
   }
 
