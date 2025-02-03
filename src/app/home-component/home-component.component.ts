@@ -65,7 +65,7 @@ export class HomeComponentComponent {
   isMenuIcon: boolean = false;
   menuState: 'open' | 'close' = 'close';
   user!: any;
-  lang: string = '';
+  lang: LANG;
   permissions: string[] = [];
   title: HeaderTitle | null = null;
   showActionButton: boolean = false;
@@ -83,8 +83,11 @@ export class HomeComponentComponent {
     private br: BreakpointObserver,
   ) {
     this.lang = this.translate.currentLang as LANG;
-    console.log('=====> LANG: ', this.lang)
 
+    this.translate.onLangChange.pipe(takeUntil(this._destroyed)).subscribe((event: LangChangeEvent) => {
+      this.lang = event.lang as LANG;
+    });
+    console.log('LANG: ', this.translate)
     // let value: any = this.localStorageService.decryptSpecialCharacter(LocalStorageEnum.user);
     // if(value){
     //   this.user = JSON.parse(value ? value : '');
@@ -119,6 +122,7 @@ export class HomeComponentComponent {
   }
 
   ngOnInit(): void {
+    this.util.initializeTranslate();
     this.getMenuItems();
     this._updateActive(this._router.url.slice(1).split('/').shift()!);
     this._router.events.pipe(takeUntil(this._destroyed)).subscribe((ev) => {
@@ -138,16 +142,15 @@ export class HomeComponentComponent {
       // this.isMenuIcon = true;
       this.isMenuIcon = response.matches;
     });
-    
+
     this.br.observe(Breakpoints.TabletPortrait).pipe(takeUntil(this._destroyed)).subscribe((response) => {
       this.isTablet = response.matches;
       this.isMenuIcon = response.matches;
     });
-    
-    this.translate.onLangChange.pipe(takeUntil(this._destroyed)).subscribe((event: LangChangeEvent) => {
-      this.lang = event.lang as LANG;
-      console.log('LANG: ', this.lang)
-    });
+
+    // this.translate.onLangChange.pipe(takeUntil(this._destroyed)).subscribe((event: LangChangeEvent) => {
+    //   this.lang = event.lang as LANG;
+    // });
   }
 
   private traverseMenuItems(menuItems: MenuItem[]) {

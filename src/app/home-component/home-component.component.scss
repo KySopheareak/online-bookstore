@@ -38,8 +38,6 @@ h1 {
     width: 350px;
     min-width: 350px;
     transition: 250ms ease-out;
-    // background-image: url("/image/sidenav-background.svg");
-    background-size: cover;
     background: linear-gradient(176.12deg, #0F0C29 0%, #302B63 51.29%, #24243E 100%);
 
     color: #FFFFFF !important;
@@ -73,6 +71,7 @@ h1 {
       transition: background-color 0.3s;
       background-color: rgba(255, 255, 255, 0);
       background-size: 0;
+      overflow: hidden !important;
 
       &.active {
         background-color: rgba(255, 255, 255, 0.2);
@@ -120,6 +119,7 @@ h1 {
       background: #00000021;
       margin-left: -16px;
       width: calc(100% + 20px);
+      overflow: hidden !important;
     }
 
     ::ng-deep .sub-menu-icon-only {
@@ -148,13 +148,14 @@ h1 {
     }
 
     .brand-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       max-height: 242px;
+      display: flex;
       transition: max-height 350ms ease-out;
       padding: 20px 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
 
       // padding-top: 16px;
       &.shadow {
@@ -194,7 +195,8 @@ h1 {
 
     .toggle-sidenav {
       mat-icon {
-        color: #2f3292 !important;
+        color: #a3a3a3 !important;
+        font-weight: 500;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -238,6 +240,7 @@ h1 {
   ::ng-deep .mdc-list-item__content {
     display: flex;
     justify-content: space-between;
+    overflow: hidden !important;
 
     .mdc-list-item__primary-text {
       color: white !important;
@@ -270,11 +273,13 @@ h1 {
 .user-card {
   display: flex;
   align-items: center;
+
   span.username {
     color: #a3a3a3 !important;
     font-weight: 500;
     font-size: 15px;
   }
+
   mat-icon {
     color: #a3a3a3 !important;
     font-weight: 500;
@@ -330,4 +335,18 @@ h1 {
       --mdc-icon-button-state-layer-size: 40px;
     }
   }
+}
+
+::ng-deep .mat-mdc-menu-content {
+  background: white !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+::ng-deep .mat-divider {
+  border-top-style: none !important;
 }

@@ -7,17 +7,13 @@
         <h1 [ngClass]="{'close-menu': isMenuIcon }">{{ "title" | translate }}</h1>
       </div>
   
-      <div class="main-menu">
-        <mat-divider></mat-divider>
-      </div>
+      <mat-divider></mat-divider>
   
       <app-nav-menu (scrollbar)="onMenuScroll($event)" (menuClick)="onClickMenu()" [isHandset]="isHandset"
         [isTablet]="isTablet" [menu]="displayMenuItems" [isMenuIcon]="isMenuIcon">
       </app-nav-menu>
   
-      <div class="main-menu">
-        <mat-divider></mat-divider>
-      </div>
+      <mat-divider></mat-divider>
   
       <div class="footer-menu">
         <mat-nav-list class="menu main-menu">
