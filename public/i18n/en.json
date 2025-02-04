@@ -5,11 +5,22 @@
         "kh": "Khmer",
         "latin": "Latin"
     },
-    "title": "BookStore",
+    "project_title": "BookStore",
     "search": "Search",
     "clear": "Clear",
+    "action": "Action",
     "logout": "Logout",
     "book_list": "Book List",
     "book_category": "Book Category",
-    "empty_list": "Empty List"
+    "empty_list": "Empty List",
+    "no": "No.",
+    "title": "Title",
+    "author": "Author",
+    "price": "Price",
+    "stock": "Stock",
+    "category": "Category",
+    "description": "Description",
+    "setting": "Setting",
+    "about": "About us"
+
 }

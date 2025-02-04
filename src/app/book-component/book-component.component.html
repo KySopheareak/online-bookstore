@@ -18,7 +18,7 @@
             <div class="m-form form-group col-md-4 col-lg-3 mb-3">
                 <label>{{ 'book_category' | translate }}</label>
                 <app-select formControlName="book_category">
-                    <app-option *ngFor="let item of transfer_status" [value]="item.code">
+                    <app-option *ngFor="let item of category" [value]="item.code">
                         {{ item.name.toLowerCase() | translate }}
                     </app-option>
                 </app-select>

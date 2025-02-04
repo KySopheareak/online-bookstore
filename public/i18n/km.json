@@ -5,11 +5,21 @@
         "kh": "ខ្មែរ",
         "latin": "ឡាតាំង"
     },
-    "title": "ហាងលក់សៀវភៅ",
+    "project_title": "ហាងលក់សៀវភៅ",
     "search": "ស្វែងរក",
     "clear": "សម្អាត",
+    "action": "សកម្មភាព",
     "logout": "ចាកចេញ",
     "book_list": "បញ្ជីសៀវភៅ",
     "book_category": "ប្រភេទសៀវភៅ",
-    "empty_list": "បញ្ជីទទេរ"
+    "empty_list": "បញ្ជីទទេរ",
+    "no": "ល.រ",
+    "title": "ចំណងជើង",
+    "author": "អ្នកនិពន្ធ",
+    "price": "តម្លៃ",
+    "stock": "ស្តុក",
+    "category": "ប្រភេទ",
+    "description": "បរិយាយសង្ខេប",
+    "setting": "ការកំណត់",
+    "about": "អំពីយើង"
 }

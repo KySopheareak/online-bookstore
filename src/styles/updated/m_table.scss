@@ -14,20 +14,20 @@
 .m-table {
 	border-radius: 8px;
 	margin-bottom: 20px;
-
 	th {
-		color: $header-color !important;
+		background-color: #1e847f !important;
+		color: #fff !important;
 		border-bottom: 1px solid #f7f7f7;
-		border-top: 1px solid white !important;
-    text-wrap: nowrap !important;
+		border-top: 1px solid #1e847f !important;
+    	text-wrap: nowrap !important;
 	}
 
 	tr {
-		background: white !important;
-		border-top: 1px solid #f7f7f7;
+		background: #1e847f !important;
+		border-top: 1px solid #1e847f;
 		border-bottom: 1px solid #f7f7f7;
 		td {
-			color: $data-color !important;
+			color: #fff !important;
 		}
 	}
 

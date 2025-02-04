@@ -305,6 +305,9 @@ ngx-intl-tel-input > div > div > div > div.search-container > input {
   .table-container {
     overflow-x: auto;
     table {
+      th {
+        background-color: #1e847f !important;
+      }
       // th,
       // td {
       //     padding: 0 4px;
@@ -364,7 +367,7 @@ ngx-intl-tel-input > div > div > div > div.search-container > input {
               opacity: 0;
             }
           }
-          background-color: #fff;
+          background-color: #1e847f;
         }
       }
     }
@@ -476,7 +479,8 @@ ngx-intl-tel-input > div > div > div > div.search-container > input {
 
     label {
       // color: $gray_label;
-      color: #2b78a1;
+      // color: #2b78a1;
+      color: #fff !important;
     }
   }
 }

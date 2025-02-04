@@ -8,7 +8,7 @@ export const ROUTE_PERMISSIONS = {
   // -----------------------------------------------------
 
   CONSOLIDATE_REQUEST: [
-    SECTION.UPLOAD_EXCEL,
+    SECTION.BOOKLIST,
     PERMISSION.ALLOW_UPLOAD_PAYSLIP
   ],
 
@@ -121,12 +121,12 @@ export const EXTENDED_ROUTE_PMS = {
 
 export const ROUTE_PMS_JSON = [
   {
-    name: SECTION.UPLOAD_EXCEL,
+    name: SECTION.BOOKLIST,
     key: 'CONSOLIDATE_REQUEST',
     icon: 'upload-excel',
     children: [
       {
-        name: SECTION.UPLOAD_EXCEL,
+        name: SECTION.BOOKLIST,
         path: '/upload-excel',
         pms_keys: EXTENDED_ROUTE_PMS.CONSOLIDATE_REQUEST,
       },

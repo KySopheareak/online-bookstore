@@ -61,7 +61,7 @@ export enum SECTION {
   // -----------------------------------------------------
   // MAIN: CONS0LIDATE_REQUEST
   // -----------------------------------------------------
-  UPLOAD_EXCEL = 'upload_excel',
+  BOOKLIST = 'book_list',
 
   // -----------------------------------------------------
   // MAIN: CONSOLIDATE_LIST

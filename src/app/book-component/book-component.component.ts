@@ -62,7 +62,7 @@ export class BookComponentComponent implements OnInit {
   searchDataGroup!: FormGroup;
   banks: any[] = [];
 
-  transfer_status: any[] = [
+  category: any[] = [
     { code: '', name: 'ALL' },
     { code: 'COMPLETED', name: 'TRANSFER' },
     { code: 'PENDING', name: 'NOT_TRANSFER' },
@@ -72,7 +72,7 @@ export class BookComponentComponent implements OnInit {
 
   filter: Filter = {
     page_key: PAGE_KEY,
-    transfer_status: '',
+    category: '',
     page_index: 1,
     page_size: 10,
     search: '',
@@ -109,39 +109,38 @@ export class BookComponentComponent implements OnInit {
 
   private _setupbookTable() {
     this.bookTable.setup({
-      showAction: false,
+      showAction: true,
       columns: [
         {
-          colDef: 'code',
-          title: 'code',
-          value: 'reference',
+          colDef: 'title',
+          title: 'title',
+          value: 'title',
+        },
+        {
+          colDef: 'author',
+          title: 'author',
+          value: 'author',
+        },
+        {
+          colDef: 'price',
+          title: 'price',
+          value: 'price',
+          useNumberFormat: true
+        },
+        {
+          colDef: 'stock',
+          title: 'stock',
+          value: 'stock',
+        },
+        {
+          colDef: 'category',
+          title: 'category',
+          value: 'category',
         },
         {
           colDef: 'description',
           title: 'description',
           value: 'description',
-        },
-        {
-          colDef: 'date',
-          title: 'payment_date',
-          value: 'issue_date',
-          useDatePipe: true,
-          excelDatePipeFormat: 'DD/MM/YYYY',
-        },
-        {
-          colDef: 'amount',
-          title: 'amount',
-          value: 'amount',
-          useNumberFormat: true,
-          useEmpAmount: true,
-          class: 'text-right',
-        },
-        {
-          colDef: 'sage_status',
-          title: 'transfer_status',
-          value: 'sage_status',
-          useBadge: true,
-          stickyEnd: true,
         },
       ],
     });
@@ -152,7 +151,7 @@ export class BookComponentComponent implements OnInit {
       page: this.filter.page_index,
       count: this.filter.page_size,
       search: this.filter.search,
-      sage_status: this.filter.transfer_status,
+      category: this.filter.category,
     };
   }
 
@@ -160,13 +159,14 @@ export class BookComponentComponent implements OnInit {
     const response = await lastValueFrom(
       this._apiService.getBooklist(this.dataJson)
     );
-    if (response.status != RESPONSE_STATUS.SUCCESS) return;
 
+    if (response.status != RESPONSE_STATUS.SUCCESS) return;
+    
     this.bookTable.update({
       data: response.data.data,
-      pagination: response.data.pagination,
+      // pagination: response.data.pagination,
     });
-    this.bookPagination = response.data.pagination;
+    // this.bookPagination = response.data.pagination;
     this._cd.detectChanges();
     
   }
@@ -184,7 +184,7 @@ export class BookComponentComponent implements OnInit {
 
       this.searchDataGroup.patchValue({
         search: this.filter.search ?? null,
-        transfer_status: this.filter.transfer_status ?? null,
+        category: this.filter.category ?? null,
       });
     } else {
       this.clearPreviousRecord();
@@ -194,7 +194,7 @@ export class BookComponentComponent implements OnInit {
         page_index: 1,
         page_size: 10,
         search: '',
-        transfer_status: '',
+        category: '',
       };
     }
   }
@@ -202,7 +202,7 @@ export class BookComponentComponent implements OnInit {
   onResetForm() {
     this.searchDataGroup.setValue({
       search: '',
-      transfer_status: '',
+      category: '',
     });
 
     this.filter = {
@@ -210,7 +210,7 @@ export class BookComponentComponent implements OnInit {
       page_index: 1,
       page_size: 10,
       search: '',
-      transfer_status: '',
+      category: '',
     };
 
     this.clearPreviousRecord();
@@ -227,7 +227,7 @@ export class BookComponentComponent implements OnInit {
       page_index: this.filter.page_index,
       page_size: this.filter.page_size,
       search: this.filter.search,
-      transfer_status: this.filter.transfer_status,
+      category: this.filter.category,
     };
     this._sessionStorage.saveObject(SessionStorage.filter, this.filter);
   }
@@ -262,7 +262,7 @@ interface Filter {
   page_index: number;
   page_size: number;
   search: string;
-  transfer_status: string | null;
+  category: string | null;
 }
 
 

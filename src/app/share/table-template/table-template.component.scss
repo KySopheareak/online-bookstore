@@ -81,3 +81,17 @@
       padding: 6px 8px !important;
   }
 }
+
+::ng-deep .mat-mdc-paginator {
+  background-color: #1e847f !important;
+}
+
+::ng-deep .mat-mdc-paginator-container .mat-mdc-paginator-range-actions .mat-mdc-paginator-range-label {
+  color: #fff !important;
+}
+
+::ng-deep .mat-mdc-select-panel {
+  background-color: #1e847f !important;
+  color: #fff !important;
+}
+
