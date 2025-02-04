@@ -1,0 +1,5 @@
+<!-- <input type="radio" [value]="value" [id]="id" [formControl]="control" *ngIf="!disabled">
+<label (cdkObserveContent)="onContentChange($event)" [class.selected]="selected" [class.disabled]="disabled" [attr.data-value]="value" [for]="id" role="button" class="dropdown-item option-label"><ng-content></ng-content></label> -->
+<button class="nssf-option dropdown-item" (click)="onClick()" type="button" [class.selected]="selected" [disabled]="disabled" (cdkObserveContent)="onContentChange($event)">
+    <ng-content></ng-content>
+</button>

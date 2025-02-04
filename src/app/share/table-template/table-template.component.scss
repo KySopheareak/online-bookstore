@@ -1,0 +1,83 @@
+:host {
+  width: 100%;
+}
+
+.chip-list-holder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.excel-icon-button {
+  cursor: pointer;;
+}
+
+.min-width-300 {
+  min-width: 300px !important;
+}
+
+.cash-display {
+  text-align: right !important;
+  padding-right: 4px;
+}
+
+.excel-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  align-items: center;
+  gap: 20px !important;
+}
+
+::ng-deep .tooltip-excel {
+  font-family: "SegoeUI", "KhmerOSBattambang" !important;
+  background: white;
+  color: #004281 !important;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.082);
+  border: 0.1rem solid #004281 !important;
+  letter-spacing: 0.03rem;
+  padding: 0 16px !important;
+  border-radius: 13px !important;
+  min-width: 280px;
+  line-height: 1.5rem;
+  margin: 6px !important;
+  text-align: center;
+  font-size: 12px;
+  .mdc-tooltip__surface {
+      display: flex;
+      min-width: 200px !important;
+      min-height: 32px !important;
+      max-width: 500px !important;
+      justify-content: center !important;
+      text-align: center !important;
+      padding: 6px 8px !important;
+  }
+}
+
+::ng-deep .tooltip-invalid {
+  font-family: "SegoeUI", "KhmerOSBattambang" !important;
+  background: white;
+  color: #812f00 !important;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.082);
+  border: 0.1rem solid #812f00 !important;
+  letter-spacing: 0.03rem;
+  padding: 0 16px !important;
+  border-radius: 13px !important;
+  min-width: 280px;
+  line-height: 1.5rem;
+  margin: 6px !important;
+  text-align: center;
+  font-size: 12px;
+  .mdc-tooltip__surface {
+      display: flex;
+      min-width: 200px !important;
+      min-height: 32px !important;
+      max-width: 500px !important;
+      justify-content: center !important;
+      text-align: center !important;
+      padding: 6px 8px !important;
+  }
+}

@@ -1,0 +1,234 @@
+<div class="table-container" appEnterpriseSmoothScrollTable>
+  <table mat-table [dataSource]="recordDataSource" class="m-table">
+
+
+    @if (setup.showOrder && setup.columns.length > 0) {
+      <ng-container matColumnDef="no" sticky>
+        <th mat-header-cell *matHeaderCellDef class="sticky-left">
+          {{ "no" | translate }}
+        </th>
+        <td mat-cell *matCellDef="let element; let number = index" class="sticky-left">
+          {{ setup.pagination.page * setup.pagination.count + (number + 1) - setup.pagination.count }}
+        </td>
+      </ng-container>
+    }
+
+
+    @for (col of setup.columns; track col.colDef; let first = $first; let last = $last;) {
+      <ng-container
+        [matColumnDef]="col.colDef"
+        [sticky]="(col.sticky) || (first && !setup.showOrder)"
+        [stickyEnd]="(col.stickyEnd) || (last && !setup.showAction)">
+
+        <th mat-header-cell *matHeaderCellDef
+            [class]="col.class || ''"
+            [ngClass]="{
+              'text-nowrap': true,
+              'sticky-left': (col.sticky) || (first && !setup.showOrder),
+              'sticky-right': (col.stickyEnd) || (last && !setup.showAction),
+              'text-center': col.useBadge
+            }"
+        >
+
+          @if (isNotString(col.title)) {
+            @for (ctitle of col.title; track $index) {
+              {{ctitle | translate}}
+            }
+
+          } @else {
+            {{col.title + "" | translate}}
+
+          }
+
+        </th>
+
+        <td mat-cell *matCellDef="let element"
+            [class]="col.class || ''"
+            [ngClass]="{
+              'text-nowrap': true,
+              'sticky-left': (col.sticky) || (first && !setup.showOrder),
+              'sticky-right': (col.stickyEnd) || (last && !setup.showAction),
+              'm-chip-center': col.useBadge
+            }"
+        >
+
+          @if (![undefined, null, ""].includes(getPropertyValue(element, col))) {
+
+
+          @if (col.useDatePipe) {
+          {{ getPropertyValue(element, col) | localizePipe: col?.datePipeFormat || 'DD-MMM-yyyy'}}
+
+
+          } @else if (col.useNumberFormat) {
+          {{ getPropertyValue(element, col) | formatNumber }} {{ col?.numberFormatSuffix || '' | translate }}
+
+
+          } @else if (col.useGender) {
+          {{ 'gender.' + element.gender | translate }}
+
+
+          } @else if (col.useBadge) {
+          <mat-chip-listbox [selectable]="false">
+
+
+            @if (isArrayElement(getPropertyValue(element, col))) {
+
+
+              <div class="chip-list-holder">
+
+                @for (item of getPropertyValue(element, col); track $index) {
+                  <mat-chip-option class="m-{{ item | lowercase }}">
+                    {{ (col?.badgePrefix || '') + item | lowercase | translate }}
+                  </mat-chip-option>
+                }
+
+                @if (getPropertyValue(element, col).length == 0) {
+                  <ng-container *ngTemplateOutlet="emptyValue"></ng-container>
+                }
+
+              </div>
+
+
+            } @else {
+              <mat-chip-option class="m-{{ getPropertyValue(element, col) | lowercase }}">
+                {{ (col?.badgePrefix || '') + getPropertyValue(element, col) | lowercase | translate }}
+              </mat-chip-option>
+
+
+            }
+
+          </mat-chip-listbox>
+
+
+          } @else {
+          {{ getPropertyValue(element, col) }}
+
+
+          }
+
+
+          } @else {
+            <ng-container *ngIf="!col.useEmpAmount">
+              <ng-container *ngTemplateOutlet="emptyValue"></ng-container>
+            </ng-container>
+            <ng-container *ngIf="col.useEmpAmount">
+              0
+            </ng-container>
+
+          }
+        </td>
+      </ng-container>
+    }
+
+
+    @if (setup.showAction && setup.columns.length > 0) {
+      <ng-container matColumnDef="action" stickyEnd>
+        <th mat-header-cell *matHeaderCellDef class="action-col text-right sticky-right">{{ "action" | translate }}</th>
+        <td mat-cell *matCellDef="let element" class="action-col sticky-right">
+          <div class="action-btns">
+
+            @if (setup.actionHandlers.show_toggle_btn_if?.(element)) {
+            <mat-slide-toggle [checked]="setup.actionHandlers.check_toggle_btn_if?.(element)"
+              (change)="onToggleActive(element, $event)">
+            </mat-slide-toggle>
+            }
+
+
+            @if (setup.actionHandlers.show_edit_btn_if?.(element)) {
+            <button mat-icon-button class="m-icon-button-edit" (click)="onClickEdit(element)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            }
+
+
+            @if (setup.actionHandlers.show_delete_btn_if?.(element)) {
+            <button mat-icon-button class="m-icon-button-delete" (click)="onClickRemove(element)">
+              <mat-icon>erase</mat-icon>
+            </button>
+            }
+
+            @if (setup.actionHandlers.show_accept_btn_if?.(element)) {
+              <button mat-icon-button class="m-icon-button-accept" (click)="onClickAccept(element)">
+                <mat-icon>check</mat-icon>
+              </button>
+              }
+
+            @if (setup.actionHandlers.show_view_btn_if?.(element)) {
+            <button mat-icon-button class="m-icon-button-primary" (click)="onClickView(element)">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            }
+
+            @if (setup.actionHandlers.show_deselect_btn_if?.(element) && element.is_selected) {
+              <button mat-icon-button class="m-icon-button-deselect" (click)="onDeselectElement(element)">
+                <mat-icon>remove</mat-icon>
+              </button>
+            }
+
+            @if (setup.actionHandlers.show_select_btn_if?.(element) && !element.is_selected) {
+              <button mat-icon-button class="m-icon-button-accept" (click)="onSelectElement(element)">
+                <mat-icon>add</mat-icon>
+              </button>
+            }
+
+
+          </div>
+        </td>
+      </ng-container>
+    }
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+
+<app-empty-list [isEmpty]="isEmpty"></app-empty-list>
+
+@if (!isEmpty) {
+  <div class="d-flex justify-content-end align-items-center">
+    <div class="excel-container">
+      <mat-paginator [length]="setup.pagination.total" [pageIndex]="setup.pagination.page - 1"
+        [pageSize]="setup.pagination.count" [pageSizeOptions]="pageSizeOptions" (page)="onClickPageChange($event)"
+        showFirstLastButtons>
+      </mat-paginator>
+      
+
+      @if(setup.multi_excel) {
+        @if (setup.exportCustomExcel) {
+          <div class="photo-excel">
+            <mat-icon svgIcon="excel_edit" class="excel-icon-button" (click)="onHandleExportCustomExcel()"
+              matTooltip='{{"excel_invalid" | translate }}' [matTooltipPosition]="'below'" matTooltipClass="tooltip-invalid">
+            </mat-icon>
+          </div>
+          }
+        @if (setup.exportExcel) {
+        <div class="photo-excel">
+          <mat-icon svgIcon="excel" class="excel-icon-button" (click)="onHandleExportExcel()"
+            matTooltip='{{"excel" | translate }}' [matTooltipPosition]="'below'" matTooltipClass="tooltip-excel">
+          </mat-icon>
+        </div>
+        }
+
+      } @else {
+      
+        @if (setup.exportExcel) {
+        <div class="photo-excel">
+          <mat-icon svgIcon="excel" class="excel-icon-button" (click)="onHandleExportExcel()">
+          </mat-icon>
+        </div>
+        }
+
+        @if (setup.exportCustomExcel) {
+        <div class="photo-excel">
+          <mat-icon svgIcon="excel" class="excel-icon-button" (click)="onHandleExportCustomExcel()">
+          </mat-icon>
+        </div>
+        }
+      }
+    </div>
+  </div>
+}
+
+
+<ng-template #emptyValue>-</ng-template>

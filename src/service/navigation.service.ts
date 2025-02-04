@@ -13,7 +13,7 @@ export class NavigationService {
     return [
       {
         name: SECTION.UPLOAD_EXCEL,
-        path: '/upload-excel',
+        path: '/book-list',
         icon: 'upload-excel',
         root: 'upload-excel',
         // isNoPermission: EXTENDED_ROUTE_PMS.CONSOLIDATE_REQUEST.filter((p) =>permissions?.includes(p)).length === 0,

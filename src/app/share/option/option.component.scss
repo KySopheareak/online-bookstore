@@ -1,0 +1,44 @@
+
+input {
+    display: none;
+}
+.nssf-option {
+    transition: background-color 150ms;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: black !important;
+    padding: 0.5rem 1.5rem !important;
+    margin-left: 0 !important;
+    &.selected {
+        background-color: rgba(0, 0, 0, .3) !important;
+        color: #ffffff !important;
+    }
+    &[disabled] {
+        opacity: 0.5;
+    }
+}
+:host, .nssf-option {
+    outline: none !important;
+    &:focus {
+        background-color: rgba(0, 0, 0, .08);
+    }
+}
+// :host {
+//     display: block;
+//     cursor: pointer;
+//     transition: background-color 250ms;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     color: black !important;
+//     padding: 0.5rem 1.5rem !important;
+//     margin-left: 0 !important;
+//     &.selected {
+//         background-color: rgba(0, 0, 0, .3);
+//         color: #ffffff !important;
+//     }
+//     &.disabled {
+//         opacity: 0.5;
+//     }
+// }

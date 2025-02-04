@@ -87,7 +87,6 @@ export class HomeComponentComponent {
     this.translate.onLangChange.pipe(takeUntil(this._destroyed)).subscribe((event: LangChangeEvent) => {
       this.lang = event.lang as LANG;
     });
-    console.log('LANG: ', this.translate)
     // let value: any = this.localStorageService.decryptSpecialCharacter(LocalStorageEnum.user);
     // if(value){
     //   this.user = JSON.parse(value ? value : '');

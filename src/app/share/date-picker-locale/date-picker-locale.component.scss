@@ -1,0 +1,31 @@
+
+.picker {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+  margin-top: 0 !important;
+}
+:host {
+  position: relative;
+  display: block;
+}
+.form-control {
+  font-size: 14px;
+  padding-right: 48px;
+}
+
+::ng-deep .mat-datepicker-content {
+  background-color: white !important;
+  border-radius: 10px !important; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+::ng-deep .mat-form-field {
+  font-size: 16px !important; 
+  color: black !important; 
+}
+
+::ng-deep .mat-mdc-icon-button svg {
+  color: rgb(119, 118, 118) !important;
+}

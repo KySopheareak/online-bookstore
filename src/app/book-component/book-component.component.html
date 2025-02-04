@@ -1,63 +1,45 @@
-<div class="container">
-    <div class="filter-section">
-        <div class="title">
-            <h3>Book List</h3>
-        </div>
-        <div class="filter">
-            <form [formGroup]="form" class="search-form">
-                <div class="search-bar">
-                  <input class="input-custom" formControlName="search" placeholder="Title......" (keyup.enter)="onSearch()">
-                </div>
-            </form>
-            <div class="btn-container">
-                <button mat-raised-button (click)="onReset()">reset
-                    <mat-icon class="btn-icon">restart_alt</mat-icon>
+<div class="container mb-0">
+    <div class="container-header d-flex justify-content-between align-items-start">
+        <h3>{{ "book_list" | translate }}</h3>
+
+        <!-- <div class="btn-container">
+          <button mat-button class="m-button-primary s-md">
+            <mat-icon>sync_alt</mat-icon>{{ "verify_data" | translate }}
+          </button>
+        </div> -->
+    </div>
+
+    <div class="m-container" [formGroup]="searchDataGroup">
+        <div class="form-row d-flex gap-2 mb-0 mt-1">
+            <div class="m-form form-group col-md-4 col-lg-3 mb-3">
+                <label>{{ "search" | translate }}</label>
+                <input type="text" id="search" class="form-control" formControlName="search" (keyup.enter)="onSearch()" trimInput />
+            </div>
+            <div class="m-form form-group col-md-4 col-lg-3 mb-3">
+                <label>{{ 'book_category' | translate }}</label>
+                <app-select formControlName="book_category">
+                    <app-option *ngFor="let item of transfer_status" [value]="item.code">
+                        {{ item.name.toLowerCase() | translate }}
+                    </app-option>
+                </app-select>
+            </div>
+            <div class="btn-filter-group mt-3">
+                <button type="button" mat-button class="m-button-outlined s-md" (click)="onResetForm()">
+                    <mat-icon>autorenew</mat-icon>{{ "clear" | translate }}
                 </button>
-                <button mat-raised-button (click)="onSearch()">search
-                    <mat-icon class="btn-icon">search</mat-icon>
+    
+                <button mat-button class="m-button-primary s-md" (click)="onSearch()">
+                    <mat-icon>search</mat-icon>{{ "search" | translate }}
                 </button>
             </div>
         </div>
     </div>
-    <div class="box-contain">
-        <div class="table-contain">
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-            
-                <!-- ID Column -->
-                <ng-container matColumnDef="id">
-                  <th mat-header-cell *matHeaderCellDef> No. </th>
-                    <td mat-cell *matCellDef="let element">
-                        {{element.id}} 
-                    </td>
-                </ng-container>
-            
-                <!-- TITLE Column -->
-                <ng-container matColumnDef="title">
-                  <th mat-header-cell *matHeaderCellDef> TITLE </th>
-                    <td mat-cell *matCellDef="let element">
-                        {{element.title}} 
-                    </td>
-                </ng-container>
-            
-                <!-- GENERATION Column -->
-                <ng-container matColumnDef="generation">
-                  <th mat-header-cell *matHeaderCellDef> GENERATION </th>
-                    <td mat-cell *matCellDef="let element">
-                        {{element.generation}} 
-                    </td>
-                </ng-container>
-            
-                <!-- RATING Column -->
-                <ng-container matColumnDef="rating">
-                  <th mat-header-cell *matHeaderCellDef> RATING </th>
-                    <td mat-cell *matCellDef="let element">
-                        {{element.rating}} 
-                    </td>
-                </ng-container>
-            
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-        </div>  
+</div>
+<div class="container pt-0">
+    <div class="m-container">
+        <app-table-template [setup]="bookTable" (onPageChange)="onPageChange($event)"
+            (onView)="onViewDetail($event)">
+        </app-table-template>
     </div>
 </div>
+

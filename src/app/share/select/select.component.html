@@ -1,0 +1,44 @@
+<button tabindex="0" 
+    [disabled]="disabled || readonly" 
+    (click)="toggle()" 
+    type="button" 
+    class="dropdown-toggle form-control" 
+    [class.no-border]="no_border" 
+    cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+    <ng-container *ngIf="valueText; else labelText">
+        {{ valueText }}
+    </ng-container>
+    <ng-template #labelText>{{ label }}</ng-template>
+</button>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="opened"
+  [cdkConnectedOverlayLockPosition]="true"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  cdkConnectedOverlayBackdropClass="app-select-backdrop"
+  (backdropClick)="close()"
+  [cdkConnectedOverlayWidth]="trigger.elementRef.nativeElement.clientWidth"
+>
+    <div class="container-option">
+        <ng-container *ngIf="enableSearch">
+            <div class="m-form search">
+                <input type="text" 
+                    [formControl]="search" 
+                    class="form-control txt-search" 
+                    (keyup.enter)="$event.stopPropagation(); 
+                    onSearchSubmit($event)" 
+                    (blur)="$event.stopPropagation(); 
+                    onSearchBlur($event)" 
+                    [placeholder]="(searchPlaceholder || 'search') | translate">
+            </div>
+            <div class="dropdown-divider"></div>
+        </ng-container>
+
+        <!-- appSmoothScroll -->
+        <div #listElement class="list-item options" appSmoothScroll #listContainer="smoothScroll" (smoothscroll)="onListScroll($event)">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</ng-template>

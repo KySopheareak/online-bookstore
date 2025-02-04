@@ -1,3 +1,15 @@
 {
-    "title": "BookStore"
+    "lang": {
+        "km": "Khmer",
+        "en": "English",
+        "kh": "Khmer",
+        "latin": "Latin"
+    },
+    "title": "BookStore",
+    "search": "Search",
+    "clear": "Clear",
+    "logout": "Logout",
+    "book_list": "Book List",
+    "book_category": "Book Category",
+    "empty_list": "Empty List"
 }

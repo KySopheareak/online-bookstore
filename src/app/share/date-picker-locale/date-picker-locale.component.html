@@ -1,0 +1,10 @@
+<input (blur)="onTouched()" [max]="max" [min]="min" class="form-control" [matDatepickerFilter]="filter" 
+     (dateChange)="onDateChange($event)" [formControl]="control" [matDatepicker]="picker">
+<mat-datepicker-toggle class="picker mt-0" matIconSuffix [for]="picker"></mat-datepicker-toggle>
+<mat-datepicker
+     [startView]="startView"
+     (yearSelected)="onYearSelected($event, picker)"
+     (monthSelected)="onMonthSelected($event, picker)"
+     (closed)="onCloseDate()"
+     #picker
+></mat-datepicker>

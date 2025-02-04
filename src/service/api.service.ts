@@ -4,7 +4,7 @@ import { RequestService } from './request.service';
 import { CommonResponse } from '../models/response/common-response';
 
 enum Endpoint {
-  booklist = '/books/list'
+  booklist = '/book-list'
 }
 
 @Injectable({
