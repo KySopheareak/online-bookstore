@@ -276,6 +276,7 @@ ngx-intl-tel-input {
     height: 43px;
     &:focus {
       color: $form-control-color;
+      background-color: #fdfdfd !important;
     }
   }
   .input-group {

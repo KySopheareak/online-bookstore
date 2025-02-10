@@ -18,7 +18,6 @@ export class LoadingService {
         this._tasks--;
       }
     }
-    console.log('TASK: ', isLoading)
     isLoading = this._tasks > 0;
     this.loadingEventEmitter.emit(isLoading);
   }

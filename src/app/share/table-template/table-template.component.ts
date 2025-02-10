@@ -243,14 +243,13 @@ export class TableTemplateComponent implements OnInit, OnDestroy {
           };
           return `${formatDate(value)}`;
           
-        } else if (column.useBadge) {
+        } else if (column.useBadge && !column.isArrayObj) {
           if (this.isArrayElement(value)) {
             const translateArray = [];
             for (let item of value) {
               const translated = this.translate.instant((column?.badgePrefix || '') + item.toString().toLowerCase());
               translateArray.push(' ' + translated);
             }
-
             return translateArray.toString();
 
           } else {
@@ -459,6 +458,7 @@ export interface ITableColumn {
   excelDatePipeFormat?: string;
 
   useBadge?: boolean;
+  isArrayObj?: boolean;
   badgePrefix?: string;
 
   useGender?: boolean;

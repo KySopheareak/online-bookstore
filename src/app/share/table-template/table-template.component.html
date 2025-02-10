@@ -67,7 +67,7 @@
           {{ 'gender.' + element.gender | translate }}
 
 
-          } @else if (col.useBadge) {
+          } @else if (col.useBadge && !col.isArrayObj) {
           <mat-chip-listbox [selectable]="false">
 
 
@@ -99,6 +99,12 @@
 
           </mat-chip-listbox>
 
+
+          } @else if (col.useBadge && col.isArrayObj) { 
+
+            @for (item of getPropertyValue(element, col); track $index) {
+              {{(item | translateObject)}}
+            }
 
           } @else {
           {{ getPropertyValue(element, col) }}

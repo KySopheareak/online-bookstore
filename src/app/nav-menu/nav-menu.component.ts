@@ -73,7 +73,7 @@ export class NavMenuComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['isMenuIcon'].currentValue) {
+    if (changes['isMenuIcon']?.currentValue) {
       this.cd.reattach();
     } else {
       this.cd.detach();

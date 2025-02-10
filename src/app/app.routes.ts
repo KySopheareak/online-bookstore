@@ -4,10 +4,10 @@ import { BookComponentComponent } from './book-component/book-component.componen
 import { BookFormComponent } from './book-form/book-form.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  // { path: '', redirectTo: 'login', pathMatch: 'full' },
 
   {
-    path: 'book-list',
+    path: '',
     component: HomeComponentComponent,
     children: [
       {

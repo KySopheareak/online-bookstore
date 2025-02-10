@@ -31,6 +31,9 @@ import { DatePickerLocaleComponent } from '../share/date-picker-locale/date-pick
 import { ApiService } from '../../service/api.service';
 import { RESPONSE_STATUS } from '../../models/enums/response-status.enum';
 import { LoadingService } from '../../service/loading.service';
+import { TranslateObjectPipe } from "../share/pipe/translate-object.pipe";
+import { SettingService } from '../../service/setting.service';
+import { MatChipsModule } from '@angular/material/chips';
 
 const PAGE_KEY = "BOOK_LIST";
 
@@ -48,8 +51,10 @@ const PAGE_KEY = "BOOK_LIST";
     TranslateModule,
     TableTemplateComponent,
     SelectComponent,
-    OptionComponent
-  ],
+    OptionComponent,
+    TranslateObjectPipe,
+    MatChipsModule
+],
   templateUrl: './book-component.component.html',
   styleUrl: './book-component.component.scss',
 })
@@ -62,17 +67,13 @@ export class BookComponentComponent implements OnInit {
   searchDataGroup!: FormGroup;
   banks: any[] = [];
 
-  category: any[] = [
-    { code: '', name: 'ALL' },
-    { code: 'COMPLETED', name: 'TRANSFER' },
-    { code: 'PENDING', name: 'NOT_TRANSFER' },
-  ];
+  category: any[] = [];
 
   bookPagination: any;
 
   filter: Filter = {
     page_key: PAGE_KEY,
-    category: '',
+    category: [],
     page_index: 1,
     page_size: 10,
     search: '',
@@ -88,7 +89,8 @@ export class BookComponentComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private _sessionStorage: SessionStorageService,
     private _apiService: ApiService,
-    private _loadingService: LoadingService 
+    private _loadingService: LoadingService,
+    private _settingService: SettingService 
   ) {
     this.lang = this.translate.currentLang as LANG;
     this.translate.onLangChange.pipe(takeUntil(this._destroy)).subscribe((event: LangChangeEvent) => {  
@@ -96,7 +98,7 @@ export class BookComponentComponent implements OnInit {
     });
 
     this.searchDataGroup = new UntypedFormGroup({
-      book_category: new UntypedFormControl(''),
+      book_category: new UntypedFormControl(null),
       search: new UntypedFormControl(''),
     });
   }
@@ -105,6 +107,7 @@ export class BookComponentComponent implements OnInit {
     this._setupbookTable();
     this._fetchPreviousRecords();
     this._fetchList();
+    this._fetchCategory();
   }
 
   private _setupbookTable() {
@@ -136,6 +139,9 @@ export class BookComponentComponent implements OnInit {
           colDef: 'category',
           title: 'category',
           value: 'category',
+          class: 'text-center',
+          useBadge: true,
+          isArrayObj: true
         },
         {
           colDef: 'description',
@@ -147,10 +153,16 @@ export class BookComponentComponent implements OnInit {
   }
 
   private get dataJson(): any | null {
+    const value = this.searchDataGroup.value;
+    let storing_data: any = [];
+    if(value.book_category != null) {
+      storing_data.push(value.book_category);
+      this.filter.category = storing_data;
+    }
     return {
       page: this.filter.page_index,
       count: this.filter.page_size,
-      search: this.filter.search,
+      search: value?.search,
       category: this.filter.category,
     };
   }
@@ -161,14 +173,21 @@ export class BookComponentComponent implements OnInit {
     );
 
     if (response.status != RESPONSE_STATUS.SUCCESS) return;
-    
     this.bookTable.update({
       data: response.data.data,
       // pagination: response.data.pagination,
     });
     // this.bookPagination = response.data.pagination;
-    this._cd.detectChanges();
     
+  }
+
+  private async _fetchCategory() {
+    let dataJson: any = {
+      status: true
+    }
+    const response = await lastValueFrom(this._settingService.getCategoryList(dataJson));
+    if(response.status !== RESPONSE_STATUS.SUCCESS) return;
+    this.category = response.data.data;
   }
 
   private async _fetchPreviousRecords() {
@@ -194,7 +213,7 @@ export class BookComponentComponent implements OnInit {
         page_index: 1,
         page_size: 10,
         search: '',
-        category: '',
+        category: [],
       };
     }
   }
@@ -202,7 +221,7 @@ export class BookComponentComponent implements OnInit {
   onResetForm() {
     this.searchDataGroup.setValue({
       search: '',
-      category: '',
+      book_category: null,
     });
 
     this.filter = {
@@ -210,11 +229,12 @@ export class BookComponentComponent implements OnInit {
       page_index: 1,
       page_size: 10,
       search: '',
-      category: '',
+      category: null,
     };
 
     this.clearPreviousRecord();
     this._fetchList();
+    console.log(this.filter);
   }
 
   clearPreviousRecord() {
@@ -222,13 +242,15 @@ export class BookComponentComponent implements OnInit {
   }
 
   saveCurrentRecord() {
+    const value = this.searchDataGroup.value;
     this.filter = {
       page_key: this.filter.page_key,
       page_index: this.filter.page_index,
       page_size: this.filter.page_size,
-      search: this.filter.search,
-      category: this.filter.category,
+      search: value?.search,
+      category: value?.book_category,
     };
+    
     this._sessionStorage.saveObject(SessionStorage.filter, this.filter);
   }
 
@@ -244,6 +266,13 @@ export class BookComponentComponent implements OnInit {
     this.filter.page_size = 10;
     this.saveCurrentRecord();
     this._fetchList();
+  }
+
+  onSelectBookCategory(data: any) {
+    let storing_data: any = [];
+    storing_data.push(data);
+    this.filter.category = storing_data;
+    console.log(this.filter.category);
   }
 
   onViewDetail(data: any) {
@@ -262,7 +291,7 @@ interface Filter {
   page_index: number;
   page_size: number;
   search: string;
-  category: string | null;
+  category: any[] | null;  
 }
 
 
